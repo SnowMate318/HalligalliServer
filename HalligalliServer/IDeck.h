@@ -9,7 +9,7 @@ public:
 	virtual void takeCard(ICard* card) = 0;
 	virtual ICard* giveCard() = 0;
 	virtual int getCardCount() = 0;
-	virtual std::queue<ICard*> getCards() = 0;
+	virtual std::queue<ICard*> giveAllCards() = 0;
 
 };
 

@@ -1,7 +1,7 @@
 #pragma once
 #include "ICard.h"
 
-class CardImpl : ICard {
+class CardImpl : public ICard {
 private:
 	Fruit fruit;
 	int fruit_cnt;

@@ -16,6 +16,9 @@
     <Filter Include="소스 파일\CardTest">
       <UniqueIdentifier>{96fdb258-3c0f-46ad-a9ae-ff9b836f792f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\DeckTest">
+      <UniqueIdentifier>{3a27f9a6-5493-48b2-a474-ed9550c7e59a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CardTest.cpp">
@@ -23,6 +26,9 @@
     </ClCompile>
     <ClCompile Include="main.cpp">
       <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="DeckTest.cpp">
+      <Filter>소스 파일\DeckTest</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

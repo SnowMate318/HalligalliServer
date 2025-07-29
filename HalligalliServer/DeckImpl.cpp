@@ -9,7 +9,7 @@ DeckImpl::~DeckImpl() {
 
 void
 DeckImpl::mergeDeck(IDeck* anotherDeck) {
-	std::queue<ICard*> deck = anotherDeck->getCards();
+	std::queue<ICard*> deck = anotherDeck->giveAllCards();
 	
 	while (!deck.empty()) {
 		this->cards.push(deck.front());
@@ -25,10 +25,13 @@ DeckImpl::takeCard(ICard* card) {
 
 ICard*
 DeckImpl::giveCard() {
+
 	if (this->cards.empty()) {
 		return nullptr;
 	}
-	return this->cards.front();
+	ICard* front = this->cards.front();
+	this->cards.pop();
+	return front;
 }
 
 int
@@ -37,6 +40,8 @@ DeckImpl::getCardCount() {
 }
 
 std::queue<ICard*>
-DeckImpl::getCards() {
-	return this->cards;
+DeckImpl::giveAllCards() {
+	std::queue<ICard*> ret = this->cards;
+	this->cards = std::queue<ICard*>();
+	return ret;
 }
