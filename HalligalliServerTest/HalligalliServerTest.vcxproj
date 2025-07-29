@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{a7c6222c-6fc7-491f-9ec3-c6ac5a2ba288}</ProjectGuid>
-    <RootNamespace>HalligalliServer</RootNamespace>
+    <ProjectGuid>{4dcb5c93-18dc-442a-aee7-fcd29f6b1139}</ProjectGuid>
+    <RootNamespace>HalligalliServerTest</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -40,7 +40,7 @@
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
-    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v143</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
@@ -102,7 +102,6 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\workspace\HalligalliServer\lib\</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -124,62 +123,16 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="CardImpl.cpp" />
-    <ClCompile Include="DeckImpl.cpp" />
+    <ClCompile Include="CardTest.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="SocketServer.cpp" />
-    <ClCompile Include="TableCardsImpl.h" />
-    <ClCompile Include="TcpSocket.cpp" />
-    <ClCompile Include="UdpSocket.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="BellImpl.h" />
-    <ClInclude Include="BroadcasterImpl.h" />
-    <ClInclude Include="CardImpl.h" />
-    <ClInclude Include="DeckImpl.h" />
-    <ClInclude Include="Fruit.h" />
-    <ClInclude Include="HalligalliGamePlayer.h" />
-    <ClInclude Include="IBell.h" />
-    <ClInclude Include="IBroadcaster.h" />
-    <ClInclude Include="ICard.h" />
-    <ClInclude Include="IDeck.h" />
-    <ClInclude Include="IGamePlayer.h" />
-    <ClInclude Include="IGamePublisher.h" />
-    <ClInclude Include="IPlayer.h" />
-    <ClInclude Include="IPlayerRoomManager.h" />
-    <ClInclude Include="IRoomPublisher.h" />
-    <ClInclude Include="IRoom.h" />
-    <ClInclude Include="IRoomNotifier.h" />
-    <ClInclude Include="IGameObserver.h" />
-    <ClInclude Include="ISender.h" />
-    <ClInclude Include="ITable.h" />
-    <ClInclude Include="ITableCards.h" />
-    <ClInclude Include="PlayerImpl.h" />
-    <ClInclude Include="PlayerRoomManagerImpl.h" />
-    <ClInclude Include="RoomImpl.h" />
-    <ClInclude Include="RoomNotifierImpl.h" />
-    <ClInclude Include="SenderImpl.h" />
-    <ClInclude Include="ICommander.h" />
-    <ClInclude Include="ICommandMediator.h" />
-    <ClInclude Include="CommandMediatorImpl.h" />
-    <ClInclude Include="IMessage.h" />
-    <ClInclude Include="IMessageParser.h" />
-    <ClInclude Include="main.h" />
-    <ClInclude Include="IServer.h" />
-    <ClInclude Include="ISocket.h" />
-    <ClInclude Include="ISocketCreator.h" />
-    <ClInclude Include="MessageParserImpl.h" />
-    <ClInclude Include="PlayerCommander.h" />
-    <ClInclude Include="RoomCommander.h" />
-    <ClInclude Include="SocketServer.h" />
-    <ClInclude Include="TableImpl.h" />
-    <ClInclude Include="TcpSocket.h" />
-    <ClInclude Include="TcpSocketCreator.h" />
-    <ClInclude Include="UdpSocket.h" />
-    <ClInclude Include="UdpSocketCreator.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\HalligalliServer\HalligalliServer.vcxproj">
+      <Project>{a7c6222c-6fc7-491f-9ec3-c6ac5a2ba288}</Project>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

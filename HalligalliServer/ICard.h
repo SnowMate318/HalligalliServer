@@ -4,6 +4,7 @@ class ICard {
 private:
 	Fruit fruit;
 	int fruit_cnt;
+	int card_num;
 public:
 
 	virtual Fruit getFruit() = 0;
