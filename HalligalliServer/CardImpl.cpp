@@ -4,13 +4,13 @@ CardImpl::CardImpl(int card_num) {
 
 	// 1~5 사과, 6~10 바나나, 11~15 포도, 16~20 수박
 	switch ((card_num-1) / 5) {
-	case 3:
+	case 0:
 		this->fruit = Fruit::APPLE;
 		break;
-	case 2:
+	case 1:
 		this->fruit = Fruit::BANANA;
 		break;
-	case 1:
+	case 2:
 		this->fruit = Fruit::GRAPE;
 		break;
 	default:
