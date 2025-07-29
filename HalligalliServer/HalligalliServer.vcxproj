@@ -124,6 +124,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="CardImpl.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="SocketServer.cpp" />
     <ClCompile Include="TableCardsImpl.h" />

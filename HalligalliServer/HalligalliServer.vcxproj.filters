@@ -159,6 +159,9 @@
     <ClCompile Include="TableCardsImpl.h">
       <Filter>헤더 파일\TableCards</Filter>
     </ClCompile>
+    <ClCompile Include="CardImpl.cpp">
+      <Filter>소스 파일\Card</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">

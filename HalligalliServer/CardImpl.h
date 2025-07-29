@@ -3,8 +3,11 @@
 
 class CardImpl : ICard {
 private:
-	enum fruit;
+	Fruit fruit;
+	int fruit_cnt;
 
 public:
+	CardImpl(int card_num);
+	~CardImpl();
 	virtual int getCardNum()override;
 };
