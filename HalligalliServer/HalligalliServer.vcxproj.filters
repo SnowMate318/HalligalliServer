@@ -13,18 +13,285 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="소스 파일\Server">
+      <UniqueIdentifier>{25a5a55f-37a3-418f-8865-39d22fc9a803}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\Server">
+      <UniqueIdentifier>{796ed5ee-f067-471f-9ed8-922306279b9b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\SocketCreator">
+      <UniqueIdentifier>{65e10dfe-ab97-4e2d-8313-c1775e802128}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\SocketCreator">
+      <UniqueIdentifier>{c92c60f9-a547-4b22-84b9-863f5389d139}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\Socket">
+      <UniqueIdentifier>{8a144412-7b34-4f43-832c-a9c26e0e8e89}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Socket">
+      <UniqueIdentifier>{aeaaf052-feb9-4ef5-b043-ad3321e5979b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\CommandMediator">
+      <UniqueIdentifier>{29505f54-502f-4d26-a2e3-fb198e36a756}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\CommandMediator">
+      <UniqueIdentifier>{6e5818d9-9a21-4563-9f90-4f1f1b66ff79}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\Commander">
+      <UniqueIdentifier>{47c405ce-ed7b-46d4-a126-408a72fd2759}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Commander">
+      <UniqueIdentifier>{df7f8a7b-cdcf-41fb-9b97-de87d69a400d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\MessageParser">
+      <UniqueIdentifier>{02a3e614-9828-4a51-84de-56b32e3eeb6f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\MessageParser">
+      <UniqueIdentifier>{72d07ccd-805f-42c0-929d-774e236e6623}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\Message">
+      <UniqueIdentifier>{59f76264-471b-4e7c-962f-d7836ae5831b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\Sender">
+      <UniqueIdentifier>{30de7247-c593-420d-b611-850cf6312c29}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\Broadcaster">
+      <UniqueIdentifier>{28743f2b-81d0-4ed5-b115-70edc1c16a06}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\PlayerRoomManager">
+      <UniqueIdentifier>{ddaeedc6-16de-48b9-8231-71b0ad692b56}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\Player">
+      <UniqueIdentifier>{54f5dd6d-4e4d-4589-8655-522212fb27b8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\Room">
+      <UniqueIdentifier>{277a6618-9d31-44e9-9010-a7717c21002d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Broadcaster">
+      <UniqueIdentifier>{de76505f-57ae-4bc5-93f6-52876b0b6c41}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Message">
+      <UniqueIdentifier>{4475b162-d32c-4201-8b17-57689958567c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Player">
+      <UniqueIdentifier>{f48f298a-3c33-4e6d-8c34-3f61278ec425}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Room">
+      <UniqueIdentifier>{dcbcdfb8-2429-4428-808d-a7bae408728d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\PlayerRoomManager">
+      <UniqueIdentifier>{1c3127f7-d1f7-400d-8601-05dd7d7417f0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Sender">
+      <UniqueIdentifier>{ae3a08b8-e1b7-4455-81c2-4aff744dc42c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\GamePlayer">
+      <UniqueIdentifier>{062a2b6b-edbb-4cad-861d-044d9cd934ae}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\RoomObserver">
+      <UniqueIdentifier>{36d703d2-f528-42c2-9300-2f634ea965ae}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\RoomNotifier">
+      <UniqueIdentifier>{4016d611-3783-4c14-9dcc-b57ac9e59d30}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\RoomNotifier">
+      <UniqueIdentifier>{891966c3-91c1-4bab-9697-b1acee1d69f0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\GamePublisher">
+      <UniqueIdentifier>{51f561f4-1bf5-4538-b16c-e6bce7a70fff}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\RoomPublisher">
+      <UniqueIdentifier>{2981f914-2b22-4e69-a6eb-35de8766d359}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\RoomPublisher">
+      <UniqueIdentifier>{72023c06-7a5e-4398-8d0b-fc585936606f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\GamePublisher">
+      <UniqueIdentifier>{c9fd0e9a-f5d8-420c-9e07-81d4fa337595}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\GameObserver">
+      <UniqueIdentifier>{434ade6b-13ac-4350-a949-823fee7c0c20}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Table">
+      <UniqueIdentifier>{385feddf-f962-49ec-b310-98979b9044c1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Bell">
+      <UniqueIdentifier>{ab12e2d1-ffd5-44ff-9267-7cf5c537d4d2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Card">
+      <UniqueIdentifier>{d0e2ced8-98f6-4c09-b14e-aa984f1c8bd3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Deck">
+      <UniqueIdentifier>{6393f1e8-a44d-4da2-9d54-f1b95599c8af}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\Table">
+      <UniqueIdentifier>{8eb5d8ed-3332-4a5e-a320-eabdbc8e2005}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\Bell">
+      <UniqueIdentifier>{c41dcb79-9505-4b24-b174-5ee604a19350}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\TableCards">
+      <UniqueIdentifier>{ad0f4636-6ba9-4cce-871b-b074e19f725b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\TableCards">
+      <UniqueIdentifier>{cdc402d0-859a-423a-af7d-63f2b3ddefb2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\Deck">
+      <UniqueIdentifier>{70e07573-f0ff-4356-be5a-ebe49b01ccaf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\Card">
+      <UniqueIdentifier>{f989f167-0b8e-4bb0-ba38-57d461fdb74b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
       <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="SocketServer.cpp">
+      <Filter>소스 파일\Server</Filter>
+    </ClCompile>
+    <ClCompile Include="TcpSocket.cpp">
+      <Filter>소스 파일\Socket</Filter>
+    </ClCompile>
+    <ClCompile Include="UdpSocket.cpp">
+      <Filter>소스 파일\Socket</Filter>
+    </ClCompile>
+    <ClCompile Include="TableCardsImpl.h">
+      <Filter>헤더 파일\TableCards</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="README.md" />
+    <ClInclude Include="IServer.h">
+      <Filter>헤더 파일\Server</Filter>
+    </ClInclude>
+    <ClInclude Include="SocketServer.h">
+      <Filter>헤더 파일\Server</Filter>
+    </ClInclude>
+    <ClInclude Include="ISocketCreator.h">
+      <Filter>헤더 파일\SocketCreator</Filter>
+    </ClInclude>
+    <ClInclude Include="TcpSocketCreator.h">
+      <Filter>헤더 파일\SocketCreator</Filter>
+    </ClInclude>
+    <ClInclude Include="UdpSocketCreator.h">
+      <Filter>헤더 파일\SocketCreator</Filter>
+    </ClInclude>
+    <ClInclude Include="ISocket.h">
+      <Filter>헤더 파일\Socket</Filter>
+    </ClInclude>
+    <ClInclude Include="TcpSocket.h">
+      <Filter>헤더 파일\Socket</Filter>
+    </ClInclude>
+    <ClInclude Include="UdpSocket.h">
+      <Filter>헤더 파일\Socket</Filter>
+    </ClInclude>
+    <ClInclude Include="ICommandMediator.h">
+      <Filter>헤더 파일\CommandMediator</Filter>
+    </ClInclude>
+    <ClInclude Include="CommandMediatorImpl.h">
+      <Filter>헤더 파일\CommandMediator</Filter>
+    </ClInclude>
+    <ClInclude Include="ICommander.h">
+      <Filter>헤더 파일\Commander</Filter>
+    </ClInclude>
+    <ClInclude Include="RoomCommander.h">
+      <Filter>헤더 파일\Commander</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerCommander.h">
+      <Filter>헤더 파일\Commander</Filter>
+    </ClInclude>
+    <ClInclude Include="IMessageParser.h">
+      <Filter>헤더 파일\MessageParser</Filter>
+    </ClInclude>
+    <ClInclude Include="IMessage.h">
+      <Filter>헤더 파일\Message</Filter>
+    </ClInclude>
+    <ClInclude Include="MessageParserImpl.h">
+      <Filter>헤더 파일\MessageParser</Filter>
+    </ClInclude>
+    <ClInclude Include="ISender.h">
+      <Filter>헤더 파일\Sender</Filter>
+    </ClInclude>
+    <ClInclude Include="SenderImpl.h">
+      <Filter>헤더 파일\Sender</Filter>
+    </ClInclude>
+    <ClInclude Include="IBroadcaster.h">
+      <Filter>헤더 파일\Broadcaster</Filter>
+    </ClInclude>
+    <ClInclude Include="BroadcasterImpl.h">
+      <Filter>헤더 파일\Broadcaster</Filter>
+    </ClInclude>
+    <ClInclude Include="IPlayerRoomManager.h">
+      <Filter>헤더 파일\PlayerRoomManager</Filter>
+    </ClInclude>
+    <ClInclude Include="IPlayer.h">
+      <Filter>헤더 파일\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerImpl.h">
+      <Filter>헤더 파일\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="IRoom.h">
+      <Filter>헤더 파일\Room</Filter>
+    </ClInclude>
+    <ClInclude Include="RoomImpl.h">
+      <Filter>헤더 파일\Room</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerRoomManagerImpl.h">
+      <Filter>헤더 파일\PlayerRoomManager</Filter>
+    </ClInclude>
+    <ClInclude Include="IGamePlayer.h">
+      <Filter>헤더 파일\GamePlayer</Filter>
+    </ClInclude>
+    <ClInclude Include="HalligalliGamePlayer.h">
+      <Filter>헤더 파일\GamePlayer</Filter>
+    </ClInclude>
+    <ClInclude Include="IGameObserver.h">
+      <Filter>헤더 파일\GameObserver</Filter>
+    </ClInclude>
+    <ClInclude Include="IRoomNotifier.h">
+      <Filter>헤더 파일\RoomNotifier</Filter>
+    </ClInclude>
+    <ClInclude Include="IRoomPublisher.h">
+      <Filter>헤더 파일\RoomPublisher</Filter>
+    </ClInclude>
+    <ClInclude Include="RoomNotifierImpl.h">
+      <Filter>헤더 파일\RoomNotifier</Filter>
+    </ClInclude>
+    <ClInclude Include="IGamePublisher.h">
+      <Filter>헤더 파일\GamePublisher</Filter>
+    </ClInclude>
+    <ClInclude Include="ITable.h">
+      <Filter>헤더 파일\Table</Filter>
+    </ClInclude>
+    <ClInclude Include="TableImpl.h">
+      <Filter>헤더 파일\Table</Filter>
+    </ClInclude>
+    <ClInclude Include="IBell.h">
+      <Filter>헤더 파일\Bell</Filter>
+    </ClInclude>
+    <ClInclude Include="BellImpl.h">
+      <Filter>헤더 파일\Bell</Filter>
+    </ClInclude>
+    <ClInclude Include="ITableCards.h">
+      <Filter>헤더 파일\TableCards</Filter>
+    </ClInclude>
+    <ClInclude Include="IDeck.h">
+      <Filter>헤더 파일\Deck</Filter>
+    </ClInclude>
+    <ClInclude Include="ICard.h">
+      <Filter>헤더 파일\Card</Filter>
+    </ClInclude>
+    <ClInclude Include="CardImpl.h">
+      <Filter>헤더 파일\Card</Filter>
+    </ClInclude>
+    <ClInclude Include="DeckImpl.h">
+      <Filter>헤더 파일\Deck</Filter>
+    </ClInclude>
+    <ClInclude Include="Fruit.h">
+      <Filter>헤더 파일\Card</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
