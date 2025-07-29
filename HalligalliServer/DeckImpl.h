@@ -1,10 +1,18 @@
 #pragma once
 #include "IDeck.h"
-
 class DeckImpl : IDeck {
-	virtual void mergeDeck(std::vector<IDeck> deck)override;
-	virtual void takeCard(ICard card)override;
-	virtual ICard giveCard()override;
+
+private:
+	std::queue<ICard*> cards;
+
+public:
+	
+	DeckImpl() {};
+	~DeckImpl() {};
+
+	virtual void mergeDeck(IDeck* anotherDeck)override;
+	virtual void takeCard(ICard* card)override;
+	virtual ICard* giveCard()override;
 	virtual int getCardCount()override;
-	virtual ICard getDeckTopCard()override;
+	virtual std::queue<ICard*> getCards()override;
 };

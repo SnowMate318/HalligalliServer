@@ -1,13 +1,15 @@
 #pragma once
-#include <vector>
+#include <queue>
 #include "ICard.h"
 class IDeck {
-	
-	virtual void mergeDeck(std::vector<IDeck> deck) = 0;
-	virtual void takeCard(ICard card) = 0;
-	virtual ICard giveCard() = 0;
+private:
+	std::queue<ICard*> cards;
+public:
+	virtual void mergeDeck(IDeck* anotherDeck) = 0;
+	virtual void takeCard(ICard* card) = 0;
+	virtual ICard* giveCard() = 0;
 	virtual int getCardCount() = 0;
-	virtual ICard getDeckTopCard() = 0;
+	virtual std::queue<ICard*> getCards() = 0;
 
 };
 

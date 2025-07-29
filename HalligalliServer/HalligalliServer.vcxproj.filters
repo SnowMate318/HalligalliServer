@@ -162,6 +162,9 @@
     <ClCompile Include="CardImpl.cpp">
       <Filter>소스 파일\Card</Filter>
     </ClCompile>
+    <ClCompile Include="DeckImpl.cpp">
+      <Filter>소스 파일\Deck</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -296,5 +299,8 @@
     <ClInclude Include="Fruit.h">
       <Filter>헤더 파일\Card</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
 </Project>
