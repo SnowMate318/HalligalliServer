@@ -21,6 +21,16 @@ CardImpl::CardImpl(int card_num) {
 }
 CardImpl::~CardImpl() {}
 
+Fruit
+CardImpl:: getFruit() {
+	return this->fruit;
+}
+
+int
+CardImpl:: getFruitCnt() {
+	return this->fruit_cnt;
+}
+
 int
 CardImpl::getCardNum() {
 

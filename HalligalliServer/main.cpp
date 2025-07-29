@@ -1,9 +1,9 @@
 #include "main.h"
-#include "Server.h"
+#include "IServer.h"
 #include "SocketServer.h"
 int main() {
 
-	Server* server = new SocketServer();
+	IServer* server = new SocketServer();
 	server->startServer();
 	server->stopServer();
 

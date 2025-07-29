@@ -1,10 +1,12 @@
 #pragma once
 #include "IServer.h"
 #include <iostream>
-class SocketServer : IServer {
+class SocketServer : public IServer {  
 
-public:
-	virtual void startServer()override;
-	virtual void stopServer()override;
+public:  
+	SocketServer();  
+	~SocketServer();  
+	virtual void startServer() override;  
+	virtual void stopServer() override;  
 
 };

@@ -9,5 +9,7 @@ private:
 public:
 	CardImpl(int card_num);
 	~CardImpl();
+	virtual Fruit getFruit()override;
+	virtual int getFruitCnt()override;
 	virtual int getCardNum()override;
 };

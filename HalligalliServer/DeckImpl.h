@@ -7,8 +7,8 @@ private:
 
 public:
 	
-	DeckImpl() {};
-	~DeckImpl() {};
+	DeckImpl();
+	~DeckImpl();
 
 	virtual void mergeDeck(IDeck* anotherDeck)override;
 	virtual void takeCard(ICard* card)override;
