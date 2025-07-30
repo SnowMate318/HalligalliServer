@@ -1,8 +1,7 @@
 #pragma once
 #include "ITable.h"
-#include "IGameObserver.h"
 
-class TableImpl : ITable, IGameObserver {
+class TableImpl : ITable{
 	virtual void playCard(int playerId)override;
 	virtual void ringBell(int playerId, int timeDiff)override;
 	virtual void getPenalty(int playerId)override;
@@ -10,5 +9,5 @@ class TableImpl : ITable, IGameObserver {
 	virtual void playerExit(int playerId)override;
 	virtual void playCard(int playerId)override;
 
-	virtual void update()override;
+	virtual void notifyGameStatus(Message* message)override;
 };

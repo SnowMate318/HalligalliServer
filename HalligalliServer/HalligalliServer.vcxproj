@@ -126,9 +126,11 @@
   <ItemGroup>
     <ClCompile Include="CardImpl.cpp" />
     <ClCompile Include="DeckImpl.cpp" />
+    <ClCompile Include="GameMessage.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MockDeck.cpp" />
     <ClCompile Include="SocketServer.cpp" />
+    <ClCompile Include="TableCardsImpl.cpp" />
     <ClCompile Include="TableCardsImpl.h" />
     <ClCompile Include="TcpSocket.cpp" />
     <ClCompile Include="UdpSocket.cpp" />
@@ -139,19 +141,19 @@
     <ClInclude Include="CardImpl.h" />
     <ClInclude Include="DeckImpl.h" />
     <ClInclude Include="Fruit.h" />
+    <ClInclude Include="GameMessage.h" />
+    <ClInclude Include="GameStatus.h" />
     <ClInclude Include="HalligalliGamePlayer.h" />
     <ClInclude Include="IBell.h" />
     <ClInclude Include="IBroadcaster.h" />
     <ClInclude Include="ICard.h" />
     <ClInclude Include="IDeck.h" />
     <ClInclude Include="IGamePlayer.h" />
-    <ClInclude Include="IGamePublisher.h" />
     <ClInclude Include="IPlayer.h" />
     <ClInclude Include="IPlayerRoomManager.h" />
     <ClInclude Include="IRoomPublisher.h" />
     <ClInclude Include="IRoom.h" />
     <ClInclude Include="IRoomNotifier.h" />
-    <ClInclude Include="IGameObserver.h" />
     <ClInclude Include="ISender.h" />
     <ClInclude Include="ITable.h" />
     <ClInclude Include="ITableCards.h" />
@@ -164,7 +166,7 @@
     <ClInclude Include="ICommander.h" />
     <ClInclude Include="ICommandMediator.h" />
     <ClInclude Include="CommandMediatorImpl.h" />
-    <ClInclude Include="IMessage.h" />
+    <ClInclude Include="Message.h" />
     <ClInclude Include="IMessageParser.h" />
     <ClInclude Include="main.h" />
     <ClInclude Include="IServer.h" />

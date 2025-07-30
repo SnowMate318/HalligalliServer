@@ -1,6 +1,9 @@
 #pragma once
 #include "IPlayer.h"
 #include "IBell.h"
+#include "Message.h"
+#include "ITableCards.h"
+
 class ITable {
 private:
 	IBell* bell;
@@ -12,4 +15,6 @@ public:
 	virtual void playerEnter(IPlayer player) = 0;
 	virtual void playerExit(int playerId) = 0;
 	virtual void playCard(int playerId) = 0;
+
+	virtual void notifyGameStatus(Message* message) = 0;
 };

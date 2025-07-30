@@ -97,20 +97,11 @@
     <Filter Include="헤더 파일\RoomNotifier">
       <UniqueIdentifier>{891966c3-91c1-4bab-9697-b1acee1d69f0}</UniqueIdentifier>
     </Filter>
-    <Filter Include="소스 파일\GamePublisher">
-      <UniqueIdentifier>{51f561f4-1bf5-4538-b16c-e6bce7a70fff}</UniqueIdentifier>
-    </Filter>
     <Filter Include="소스 파일\RoomPublisher">
       <UniqueIdentifier>{2981f914-2b22-4e69-a6eb-35de8766d359}</UniqueIdentifier>
     </Filter>
     <Filter Include="헤더 파일\RoomPublisher">
       <UniqueIdentifier>{72023c06-7a5e-4398-8d0b-fc585936606f}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="헤더 파일\GamePublisher">
-      <UniqueIdentifier>{c9fd0e9a-f5d8-420c-9e07-81d4fa337595}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="헤더 파일\GameObserver">
-      <UniqueIdentifier>{434ade6b-13ac-4350-a949-823fee7c0c20}</UniqueIdentifier>
     </Filter>
     <Filter Include="소스 파일\Table">
       <UniqueIdentifier>{385feddf-f962-49ec-b310-98979b9044c1}</UniqueIdentifier>
@@ -168,6 +159,12 @@
     <ClCompile Include="MockDeck.cpp">
       <Filter>소스 파일\Deck</Filter>
     </ClCompile>
+    <ClCompile Include="TableCardsImpl.cpp">
+      <Filter>소스 파일\TableCards</Filter>
+    </ClCompile>
+    <ClCompile Include="GameMessage.cpp">
+      <Filter>소스 파일\Message</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -215,7 +212,7 @@
     <ClInclude Include="IMessageParser.h">
       <Filter>헤더 파일\MessageParser</Filter>
     </ClInclude>
-    <ClInclude Include="IMessage.h">
+    <ClInclude Include="Message.h">
       <Filter>헤더 파일\Message</Filter>
     </ClInclude>
     <ClInclude Include="MessageParserImpl.h">
@@ -257,9 +254,6 @@
     <ClInclude Include="HalligalliGamePlayer.h">
       <Filter>헤더 파일\GamePlayer</Filter>
     </ClInclude>
-    <ClInclude Include="IGameObserver.h">
-      <Filter>헤더 파일\GameObserver</Filter>
-    </ClInclude>
     <ClInclude Include="IRoomNotifier.h">
       <Filter>헤더 파일\RoomNotifier</Filter>
     </ClInclude>
@@ -268,9 +262,6 @@
     </ClInclude>
     <ClInclude Include="RoomNotifierImpl.h">
       <Filter>헤더 파일\RoomNotifier</Filter>
-    </ClInclude>
-    <ClInclude Include="IGamePublisher.h">
-      <Filter>헤더 파일\GamePublisher</Filter>
     </ClInclude>
     <ClInclude Include="ITable.h">
       <Filter>헤더 파일\Table</Filter>
@@ -304,6 +295,12 @@
     </ClInclude>
     <ClInclude Include="MockDeck.h">
       <Filter>헤더 파일\Deck</Filter>
+    </ClInclude>
+    <ClInclude Include="GameMessage.h">
+      <Filter>헤더 파일\Message</Filter>
+    </ClInclude>
+    <ClInclude Include="GameStatus.h">
+      <Filter>헤더 파일\Message</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

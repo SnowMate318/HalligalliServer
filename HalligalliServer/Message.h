@@ -1,5 +1,5 @@
 #pragma once
-class IMessage {
+class Message {
 
 
 

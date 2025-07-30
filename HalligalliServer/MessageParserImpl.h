@@ -4,6 +4,6 @@
 class MessageParserImpl : IMessageParser {
 
 public:
-	virtual IMessage parseMessage()override;
+	virtual Message parseMessage()override;
 
 };

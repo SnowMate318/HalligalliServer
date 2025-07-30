@@ -1,8 +1,8 @@
 #pragma once
-#include "IMessage.h"
+#include "Message.h"
 class IMessageParser {
 
 public:
-	virtual IMessage parseMessage() = 0;
+	virtual Message parseMessage() = 0;
 
 };
