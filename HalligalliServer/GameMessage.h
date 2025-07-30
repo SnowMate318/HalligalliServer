@@ -17,11 +17,12 @@ private:
 public:
 	
 	GameMessage(GameStatus message, std::vector<ICard*> frontcard);
-	GameMessage(GameStatus message, std::vector<ICard*> frontcard, int next_turn);
-	GameMessage(GameStatus message, std::vector<ICard*> frontcard, int next_turn, int target_player);
+	GameMessage(GameStatus message, std::vector<ICard*> frontcard, int target_player);
+
 	~GameMessage();
 
 	void setPlayers(std::vector<IGamePlayer*> gamePlayers);
+	void setNextTurn(int next_turn);
 	
 
 };

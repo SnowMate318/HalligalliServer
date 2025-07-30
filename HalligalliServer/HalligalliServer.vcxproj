@@ -132,6 +132,7 @@
     <ClCompile Include="SocketServer.cpp" />
     <ClCompile Include="TableCardsImpl.cpp" />
     <ClCompile Include="TableCardsImpl.h" />
+    <ClCompile Include="TableImpl.cpp" />
     <ClCompile Include="TcpSocket.cpp" />
     <ClCompile Include="UdpSocket.cpp" />
   </ItemGroup>

@@ -1,7 +1,7 @@
 #pragma once
 #include "IRoom.h"
-#include "IGameObserver.h"
-class HalligalliRoom : IRoom, IGameObserver {
+
+class HalligalliRoom : IRoom {
 private:
 	IGamePlayer* gamePlayers[4];
 	IRoomNotifier* roomNotifier;
@@ -16,5 +16,5 @@ public:
 	virtual void playCard(int playerId)override;
 	virtual void getPenalty(int playerId)override;
 
-	virtual void update()override;
+	virtual std::vector<IGamePlayer*> getRoomPlayers()override;
 };

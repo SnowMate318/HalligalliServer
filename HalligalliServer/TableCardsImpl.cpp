@@ -33,7 +33,6 @@ TableCardsImpl::initTable(int player_count)
 {
 	this->player_count = player_count;
     this->playerDecks = std::vector<IDeck*>(player_count);
-	this->activate = std::vector<bool>(player_count, true);
 
 	for (int i = 0; i < player_count; i++) {
 		playerDecks[i] = new DeckImpl(); // new 키워드로 생성 책임 부여
@@ -45,7 +44,6 @@ TableCardsImpl::initTable(int player_count)
 	numbersOfEachFruit[Fruit::GRAPE] = 0;
 	numbersOfEachFruit[Fruit::WATERMELON] = 0;
 
-	this->current_turn_player = 0;
 }
 
 void
@@ -92,11 +90,9 @@ TableCardsImpl::checkFrontCardCount()
 void 
 TableCardsImpl::playCard(int playerId)
 {
-	int next_turn_player = (current_turn_player + 1) % player_count;
 
 	if (playerDecks[playerId]->getCardCount() == 0) {
-		notifyPlayerDie(playerId, next_turn_player); // 테이블에게 플레이어 죽은 정보 전달
-		current_turn_player = next_turn_player;
+		notifyPlayerDie(playerId); // 테이블에게 플레이어 죽은 정보 전달
 		return;
 	}
 
@@ -105,34 +101,28 @@ TableCardsImpl::playCard(int playerId)
 	tableDeck->takeCard(card);
 
 	if (checkFrontCardCount()) {
-		notifyBellActivate(next_turn_player); // 벨 활성화 정보 전달
-		current_turn_player = next_turn_player;
+		notifyBellActivate(); // 벨 활성화 정보 전달
 		return;
 	}
 	
-	notifyNextTurn(next_turn_player);
-	current_turn_player = next_turn_player;
+	notifyNextTurn();
 }
 
-void 
-TableCardsImpl::processPenalty(int playerId)
+void
+TableCardsImpl::processPenalty(int playerId, std::vector<int> alivePlayers)
 {
 	int idx = (playerId + 1) % player_count;
-	for (int i = 0; i < player_count-1; i++) {
-		if (!activate[idx]) continue;
+	for (int player : alivePlayers) {
 		ICard* card = playerDecks[playerId]->giveCard();
 
 
 		if (card == nullptr) {
-			if (playerId == current_turn_player) {
-				current_turn_player = (current_turn_player + 1) % player_count;
-			}
-			notifyPlayerDie(playerId, current_turn_player); // 테이블에게 플레이어 죽은 정보 전달
+			notifyPlayerDie(playerId); // 테이블에게 플레이어 죽은 정보 전달
 			
 			return;
 		}
 
-		playerDecks[idx]->takeCard(card);
+		playerDecks[player]->takeCard(card);
 	}
 }
 
@@ -143,29 +133,29 @@ TableCardsImpl::giveRewardToWinner(int playerId)
 }
 
 void 
-TableCardsImpl::notifyBellActivate(int next_turn_player)
+TableCardsImpl::notifyBellActivate()
 {
 	// 메세지 형태로 테이블에 전달?
-	Message* message = new GameMessage(GameStatus::BELL_ACTIVATE, this->frontCards, next_turn_player);
+	Message* message = new GameMessage(GameStatus::BELL_ACTIVATE, this->frontCards);
 	table->notifyGameStatus(message);
 }
 
 void 
-TableCardsImpl::notifyPlayerDie(int playerId, int next_turn_player)
+TableCardsImpl::notifyPlayerDie(int playerId)
 {
-	Message* message = new GameMessage(GameStatus::PLAYER_DIE, this->frontCards, next_turn_player, playerId);
+	Message* message = new GameMessage(GameStatus::PLAYER_DIE, this->frontCards, playerId);
 	table->notifyGameStatus(message);
 }
 
 void TableCardsImpl::notifyBellWinner(int playerId)
 {
-	Message* message = new GameMessage(GameStatus::BELL_WIN, this->frontCards, current_turn_player, playerId);
+	Message* message = new GameMessage(GameStatus::BELL_WIN, this->frontCards, playerId);
 	table->notifyGameStatus(message);
 }
 
-void TableCardsImpl::notifyNextTurn(int next_turn_player)
+void TableCardsImpl::notifyNextTurn()
 {
-	Message* message = new GameMessage(GameStatus::NEXT_TURN, this->frontCards, next_turn_player);
+	Message* message = new GameMessage(GameStatus::NEXT_TURN, this->frontCards);
 	table->notifyGameStatus(message);
 }
 

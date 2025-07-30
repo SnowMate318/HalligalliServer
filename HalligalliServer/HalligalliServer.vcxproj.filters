@@ -165,6 +165,9 @@
     <ClCompile Include="GameMessage.cpp">
       <Filter>소스 파일\Message</Filter>
     </ClCompile>
+    <ClCompile Include="TableImpl.cpp">
+      <Filter>소스 파일\Table</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">

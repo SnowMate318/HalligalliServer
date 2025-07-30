@@ -8,6 +8,7 @@ class ITable {
 private:
 	IBell* bell;
 	ITableCards* tablecards;
+
 public:
 	virtual void playCard(int playerId) = 0;
 	virtual void ringBell(int playerId, int timeDiff) = 0;

@@ -1,6 +1,7 @@
 #pragma once
 #include "IGamePlayer.h"
 #include "IRoomNotifier.h"
+#include <vector>
 class IRoom {
 
 private:
@@ -16,5 +17,7 @@ public:
 	virtual void ringBell(int playerId, int timeDiff) = 0;
 	virtual void playCard(int playerId) = 0;
 	virtual void getPenalty(int playerId) = 0;
+
+	virtual std::vector<IGamePlayer*> getRoomPlayers() = 0;
 
 };
