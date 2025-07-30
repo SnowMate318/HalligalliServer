@@ -129,6 +129,8 @@
     <ClCompile Include="GameMessage.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MockDeck.cpp" />
+    <ClCompile Include="RoomNotifier.cpp" />
+    <ClCompile Include="RoomNotifierImpl.cpp" />
     <ClCompile Include="SocketServer.cpp" />
     <ClCompile Include="TableCardsImpl.cpp" />
     <ClCompile Include="TableCardsImpl.h" />

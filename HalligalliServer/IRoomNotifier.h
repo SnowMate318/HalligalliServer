@@ -1,4 +1,6 @@
 #pragma once
+#include "Message.h"
+
 class IRoomNotifier {
 private:
 public:
@@ -6,11 +8,8 @@ public:
 	virtual void notifyExitPlayer(int playerId) = 0;
 	virtual void notifyPlayerReady(int playerId) = 0;
 	virtual void notifyPlayerUnready(int playerId) = 0;
-	virtual void notifyNextTurn(int playerId) = 0;
-	virtual void notifyBellWinner(int playerId) = 0;
-	virtual void notifyPenalty(int playerId) = 0;
-	virtual void notifyPlayerDie(int playerId) = 0;
-	virtual void notifyGameWInner(int playerId) = 0;
-	virtual void notifyBellActivate() = 0;
+	virtual void notifyGameStart() = 0;
+
+	virtual void notifyGameMessage(Message* message) = 0;
 
 };

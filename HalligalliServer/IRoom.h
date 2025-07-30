@@ -19,5 +19,6 @@ public:
 	virtual void getPenalty(int playerId) = 0;
 
 	virtual std::vector<IGamePlayer*> getRoomPlayers() = 0;
+	virtual std::vector<int> getAlivePlayerIndexes() = 0;
 
 };

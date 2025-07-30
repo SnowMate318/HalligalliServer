@@ -132,6 +132,12 @@ TableCardsImpl::giveRewardToWinner(int playerId)
 	playerDecks[playerId]->mergeDeck(tableDeck);
 }
 
+void TableCardsImpl::playerExit(int playerId)
+{
+	tableDeck->mergeDeck(playerDecks[playerId]); // 기존 사용자 카드를 테이블 덱에 모두 반납
+	notifyPlayerDie(playerId);
+}
+
 void 
 TableCardsImpl::notifyBellActivate()
 {

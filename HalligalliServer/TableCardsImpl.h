@@ -26,6 +26,7 @@ public:
 	virtual void playCard(int playerId)override;
 	virtual void processPenalty(int playerId, std::vector<int> alivePlayers)override;
 	virtual void giveRewardToWinner(int playerId)override;
+	virtual void playerExit(int playerId)override;
 
 	virtual void notifyBellActivate()override;
 	virtual void notifyPlayerDie(int playerId)override;

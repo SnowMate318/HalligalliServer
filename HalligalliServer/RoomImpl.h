@@ -17,4 +17,5 @@ public:
 	virtual void getPenalty(int playerId)override;
 
 	virtual std::vector<IGamePlayer*> getRoomPlayers()override;
+	virtual std::vector<int> getAlivePlayerIndexes()override;
 };
