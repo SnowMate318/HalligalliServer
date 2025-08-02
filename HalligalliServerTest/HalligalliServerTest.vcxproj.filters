@@ -16,11 +16,11 @@
     <Filter Include="소스 파일\CardTest">
       <UniqueIdentifier>{96fdb258-3c0f-46ad-a9ae-ff9b836f792f}</UniqueIdentifier>
     </Filter>
-    <Filter Include="소스 파일\DeckTest">
-      <UniqueIdentifier>{3a27f9a6-5493-48b2-a474-ed9550c7e59a}</UniqueIdentifier>
-    </Filter>
     <Filter Include="소스 파일\BellTest">
       <UniqueIdentifier>{8c923219-1743-42cb-a7ca-a629a79266f5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\TableDeckTest">
+      <UniqueIdentifier>{fa34a42b-b231-4d57-91bd-a066e95944f8}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -30,11 +30,11 @@
     <ClCompile Include="main.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="DeckTest.cpp">
-      <Filter>소스 파일\DeckTest</Filter>
-    </ClCompile>
     <ClCompile Include="BellTest.cpp">
       <Filter>소스 파일\BellTest</Filter>
+    </ClCompile>
+    <ClCompile Include="TableDeckTest.cpp">
+      <Filter>소스 파일\TableDeckTest</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

@@ -126,21 +126,21 @@
   <ItemGroup>
     <ClCompile Include="BellImpl.cpp" />
     <ClCompile Include="CardImpl.cpp" />
-    <ClCompile Include="DeckImpl.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MockBell.cpp" />
-    <ClCompile Include="MockDeck.cpp" />
+    <ClCompile Include="MockTableDeck.cpp" />
+    <ClCompile Include="TableDeckImpl.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BellImpl.h" />
     <ClInclude Include="CardImpl.h" />
-    <ClInclude Include="DeckImpl.h" />
     <ClInclude Include="Fruit.h" />
     <ClInclude Include="IBell.h" />
     <ClInclude Include="ICard.h" />
-    <ClInclude Include="IDeck.h" />
+    <ClInclude Include="ITableDeck.h" />
+    <ClInclude Include="MockTableDeck.h" />
+    <ClInclude Include="TableDeckImpl.h" />
     <ClInclude Include="MockBell.h" />
-    <ClInclude Include="MockDeck.h" />
     <ClInclude Include="main.h" />
   </ItemGroup>
   <ItemGroup>

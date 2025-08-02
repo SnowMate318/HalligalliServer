@@ -1,6 +1,5 @@
 #pragma once
 #include "IBell.h"
-#include "ITable.h"
 #include <vector>
 #include <algorithm>
 #include <mutex>
@@ -9,7 +8,6 @@ struct PlayerBellInfo;
 
 class BellImpl : IBell {
 private:
-	ITable* table;
 	bool isActivate;
 	bool onThread;
 
@@ -17,7 +15,7 @@ private:
 	std::vector<PlayerBellInfo> playerInfos;
 
 public:
-	BellImpl(ITable* table);
+	BellImpl();
 	~BellImpl();
 	virtual void ringBell(int playerId, int timeDiff)override;
 	virtual void notifyWInner(int playerId)override;

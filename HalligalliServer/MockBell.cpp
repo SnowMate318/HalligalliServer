@@ -68,3 +68,7 @@ MockBell::getWinner() {
 	}
 	return winner.playerId;
 }
+
+void MockBell::notifyWInner(int playerId) {
+    
+}

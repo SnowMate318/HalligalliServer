@@ -19,17 +19,17 @@
     <Filter Include="소스 파일\Card">
       <UniqueIdentifier>{d0e2ced8-98f6-4c09-b14e-aa984f1c8bd3}</UniqueIdentifier>
     </Filter>
-    <Filter Include="소스 파일\Deck">
-      <UniqueIdentifier>{6393f1e8-a44d-4da2-9d54-f1b95599c8af}</UniqueIdentifier>
-    </Filter>
     <Filter Include="헤더 파일\Bell">
       <UniqueIdentifier>{c41dcb79-9505-4b24-b174-5ee604a19350}</UniqueIdentifier>
     </Filter>
-    <Filter Include="헤더 파일\Deck">
-      <UniqueIdentifier>{70e07573-f0ff-4356-be5a-ebe49b01ccaf}</UniqueIdentifier>
-    </Filter>
     <Filter Include="헤더 파일\Card">
       <UniqueIdentifier>{f989f167-0b8e-4bb0-ba38-57d461fdb74b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\TableDeck">
+      <UniqueIdentifier>{9e378e5a-0041-47c1-a1fb-828e1171fcf8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\TableDeck">
+      <UniqueIdentifier>{6393f1e8-a44d-4da2-9d54-f1b95599c8af}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -39,17 +39,17 @@
     <ClCompile Include="CardImpl.cpp">
       <Filter>소스 파일\Card</Filter>
     </ClCompile>
-    <ClCompile Include="DeckImpl.cpp">
-      <Filter>소스 파일\Deck</Filter>
-    </ClCompile>
-    <ClCompile Include="MockDeck.cpp">
-      <Filter>소스 파일\Deck</Filter>
-    </ClCompile>
     <ClCompile Include="BellImpl.cpp">
       <Filter>소스 파일\Bell</Filter>
     </ClCompile>
     <ClCompile Include="MockBell.cpp">
       <Filter>소스 파일\Bell</Filter>
+    </ClCompile>
+    <ClCompile Include="TableDeckImpl.cpp">
+      <Filter>소스 파일\TableDeck</Filter>
+    </ClCompile>
+    <ClCompile Include="MockTableDeck.cpp">
+      <Filter>소스 파일\TableDeck</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -62,26 +62,26 @@
     <ClInclude Include="BellImpl.h">
       <Filter>헤더 파일\Bell</Filter>
     </ClInclude>
-    <ClInclude Include="IDeck.h">
-      <Filter>헤더 파일\Deck</Filter>
-    </ClInclude>
     <ClInclude Include="ICard.h">
       <Filter>헤더 파일\Card</Filter>
     </ClInclude>
     <ClInclude Include="CardImpl.h">
       <Filter>헤더 파일\Card</Filter>
     </ClInclude>
-    <ClInclude Include="DeckImpl.h">
-      <Filter>헤더 파일\Deck</Filter>
-    </ClInclude>
     <ClInclude Include="Fruit.h">
       <Filter>헤더 파일\Card</Filter>
     </ClInclude>
-    <ClInclude Include="MockDeck.h">
-      <Filter>헤더 파일\Deck</Filter>
-    </ClInclude>
     <ClInclude Include="MockBell.h">
       <Filter>헤더 파일\Bell</Filter>
+    </ClInclude>
+    <ClInclude Include="ITableDeck.h">
+      <Filter>헤더 파일\TableDeck</Filter>
+    </ClInclude>
+    <ClInclude Include="TableDeckImpl.h">
+      <Filter>헤더 파일\TableDeck</Filter>
+    </ClInclude>
+    <ClInclude Include="MockTableDeck.h">
+      <Filter>헤더 파일\TableDeck</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

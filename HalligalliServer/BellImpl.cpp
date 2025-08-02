@@ -16,9 +16,8 @@ struct PlayerBellInfo {
 };
 
 
-BellImpl::BellImpl(ITable* table)
+BellImpl::BellImpl()
 {
-	this->table = table;
 	this->isActivate = false;
 	this->onThread = false;
 }
@@ -59,7 +58,7 @@ void BellImpl::ringBell(int playerId, int timeDiff)
 
 void BellImpl::notifyWInner(int playerId)
 {
-	table->bellWin(playerId);
+	//Todo: 기능 구현
 }
 
 void BellImpl::bellActivate()

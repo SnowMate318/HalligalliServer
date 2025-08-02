@@ -1,6 +1,5 @@
 #pragma once
 #include "IBell.h"
-#include "ITable.h"
 #include <vector>
 #include <algorithm>
 #include <mutex>
@@ -19,10 +18,11 @@ private:
 public:
 	MockBell();
 	~MockBell();
+
 	int getWinner();
 
 	virtual void ringBell(int playerId, int timeDiff)override;
-	virtual void notifyWInner(int playerId)override;
 	virtual void bellActivate()override;
 	virtual void bellDeactivate()override;
+	virtual void notifyWInner(int playerId)override;
 };
