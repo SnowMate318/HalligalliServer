@@ -40,6 +40,12 @@
     <Filter Include="헤더 파일\Exceptions">
       <UniqueIdentifier>{2ded6aed-b599-49a2-b4fc-6f728b229fcf}</UniqueIdentifier>
     </Filter>
+    <Filter Include="헤더 파일\PlayerDeck">
+      <UniqueIdentifier>{81620448-8701-42e2-8392-1f22b3ccff21}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\PlayerDeck">
+      <UniqueIdentifier>{7f2505c2-df61-4040-988a-afcc481bc7ef}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -62,6 +68,9 @@
     </ClCompile>
     <ClCompile Include="FrontCardsImpl.cpp">
       <Filter>소스 파일\FrontCards</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerDeckImpl.cpp">
+      <Filter>소스 파일\PlayerDeck</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -103,6 +112,12 @@
     </ClInclude>
     <ClInclude Include="Exception.h">
       <Filter>헤더 파일\Exceptions</Filter>
+    </ClInclude>
+    <ClInclude Include="IPlayerDeck.h">
+      <Filter>헤더 파일\PlayerDeck</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerDeckImpl.h">
+      <Filter>헤더 파일\PlayerDeck</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -130,6 +130,7 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MockBell.cpp" />
     <ClCompile Include="MockTableDeck.cpp" />
+    <ClCompile Include="PlayerDeckImpl.cpp" />
     <ClCompile Include="TableDeckImpl.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -143,6 +144,8 @@
     <ClInclude Include="IFrontCards.h" />
     <ClInclude Include="ITableDeck.h" />
     <ClInclude Include="MockTableDeck.h" />
+    <ClInclude Include="IPlayerDeck.h" />
+    <ClInclude Include="PlayerDeckImpl.h" />
     <ClInclude Include="TableDeckImpl.h" />
     <ClInclude Include="MockBell.h" />
     <ClInclude Include="main.h" />

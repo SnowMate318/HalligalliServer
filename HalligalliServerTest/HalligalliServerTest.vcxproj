@@ -127,6 +127,7 @@
     <ClCompile Include="CardTest.cpp" />
     <ClCompile Include="FrontCardsTest.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="PlayerDeckTest.cpp" />
     <ClCompile Include="TableDeckTest.cpp" />
   </ItemGroup>
   <ItemGroup>
