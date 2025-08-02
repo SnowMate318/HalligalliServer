@@ -125,6 +125,7 @@
   <ItemGroup>
     <ClCompile Include="BellTest.cpp" />
     <ClCompile Include="CardTest.cpp" />
+    <ClCompile Include="FrontCardsTest.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="TableDeckTest.cpp" />
   </ItemGroup>
