@@ -8,4 +8,4 @@
 
 ### 클래스 다이어그램
 
-<img width="2545" height="1762" alt="제목 없는 다이어그램-페이지-4 drawio" src="https://github.com/user-attachments/assets/c3d22915-8c44-4499-a510-cab45fddc609" />
+<img width="1350" height="1300" alt="할리갈리-설계" src="https://github.com/user-attachments/assets/4da9b60d-f0c9-4a94-b16e-19922a8f2fae" />
