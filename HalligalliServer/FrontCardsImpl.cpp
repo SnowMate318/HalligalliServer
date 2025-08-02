@@ -16,7 +16,7 @@ FrontCardsImpl::~FrontCardsImpl()
 void 
 FrontCardsImpl::updateCard(int playerId, ICard* card)
 {
-	if (playerId >= cards.size()) {
+	if (playerId >= cards.size() || playerId < 0) {
 		throw Exception("잘못된 인덱스 오류");
 	}
 
@@ -28,7 +28,7 @@ void
 FrontCardsImpl::resetCard(int playerId)
 {
 
-	if (playerId >= cards.size()) {
+	if (playerId >= cards.size() || playerId < 0) {
 		throw Exception("잘못된 인덱스 오류");
 	}
 

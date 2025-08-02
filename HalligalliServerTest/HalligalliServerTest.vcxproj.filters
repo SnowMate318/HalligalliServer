@@ -28,6 +28,9 @@
     <Filter Include="소스 파일\PlayerDeckTest">
       <UniqueIdentifier>{5baad085-43c3-4ea3-a4ec-d785593053d9}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\GameStatusManagerTest">
+      <UniqueIdentifier>{fc6a1a6c-9e80-4352-a29b-36d3f4252ead}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CardTest.cpp">
@@ -47,6 +50,9 @@
     </ClCompile>
     <ClCompile Include="PlayerDeckTest.cpp">
       <Filter>소스 파일\PlayerDeckTest</Filter>
+    </ClCompile>
+    <ClCompile Include="GameStatusManagerTest.cpp">
+      <Filter>소스 파일\GameStatusManagerTest</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

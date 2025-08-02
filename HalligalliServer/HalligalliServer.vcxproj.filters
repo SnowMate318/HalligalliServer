@@ -46,6 +46,12 @@
     <Filter Include="소스 파일\PlayerDeck">
       <UniqueIdentifier>{7f2505c2-df61-4040-988a-afcc481bc7ef}</UniqueIdentifier>
     </Filter>
+    <Filter Include="헤더 파일\GameStatusManager">
+      <UniqueIdentifier>{d8152a97-07f2-4354-a584-0d5dbce6f6b4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\GameStatusManager">
+      <UniqueIdentifier>{c9697025-ee1f-44a0-9144-6c3d0bfaad3c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -71,6 +77,9 @@
     </ClCompile>
     <ClCompile Include="PlayerDeckImpl.cpp">
       <Filter>소스 파일\PlayerDeck</Filter>
+    </ClCompile>
+    <ClCompile Include="GameStatusManagerImpl.cpp">
+      <Filter>소스 파일\GameStatusManager</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -118,6 +127,15 @@
     </ClInclude>
     <ClInclude Include="PlayerDeckImpl.h">
       <Filter>헤더 파일\PlayerDeck</Filter>
+    </ClInclude>
+    <ClInclude Include="IGameStatusManager.h">
+      <Filter>헤더 파일\GameStatusManager</Filter>
+    </ClInclude>
+    <ClInclude Include="GameStatusManagerImpl.h">
+      <Filter>헤더 파일\GameStatusManager</Filter>
+    </ClInclude>
+    <ClInclude Include="GameStatus.h">
+      <Filter>헤더 파일\GameStatusManager</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

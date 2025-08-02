@@ -127,6 +127,7 @@
     <ClCompile Include="BellImpl.cpp" />
     <ClCompile Include="CardImpl.cpp" />
     <ClCompile Include="FrontCardsImpl.cpp" />
+    <ClCompile Include="GameStatusManagerImpl.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MockBell.cpp" />
     <ClCompile Include="MockTableDeck.cpp" />
@@ -139,9 +140,12 @@
     <ClInclude Include="Exception.h" />
     <ClInclude Include="FrontCardsImpl.h" />
     <ClInclude Include="Fruit.h" />
+    <ClInclude Include="GameStatus.h" />
+    <ClInclude Include="GameStatusManagerImpl.h" />
     <ClInclude Include="IBell.h" />
     <ClInclude Include="ICard.h" />
     <ClInclude Include="IFrontCards.h" />
+    <ClInclude Include="IGameStatusManager.h" />
     <ClInclude Include="ITableDeck.h" />
     <ClInclude Include="MockTableDeck.h" />
     <ClInclude Include="IPlayerDeck.h" />

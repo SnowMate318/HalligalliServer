@@ -126,6 +126,7 @@
     <ClCompile Include="BellTest.cpp" />
     <ClCompile Include="CardTest.cpp" />
     <ClCompile Include="FrontCardsTest.cpp" />
+    <ClCompile Include="GameStatusManagerTest.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="PlayerDeckTest.cpp" />
     <ClCompile Include="TableDeckTest.cpp" />
