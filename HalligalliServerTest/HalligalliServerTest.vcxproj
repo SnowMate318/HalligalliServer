@@ -123,6 +123,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="BellTest.cpp" />
     <ClCompile Include="CardTest.cpp" />
     <ClCompile Include="DeckTest.cpp" />
     <ClCompile Include="main.cpp" />

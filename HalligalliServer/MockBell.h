@@ -7,18 +7,20 @@
 
 struct PlayerBellInfo;
 
-class BellImpl : IBell {
+class MockBell : IBell {
 private:
-	ITable* table;
 	bool isActivate;
 	bool onThread;
 
 	std::mutex mtx;
 	std::vector<PlayerBellInfo> playerInfos;
+	
 
 public:
-	BellImpl(ITable* table);
-	~BellImpl();
+	MockBell();
+	~MockBell();
+	int getWinner();
+
 	virtual void ringBell(int playerId, int timeDiff)override;
 	virtual void notifyWInner(int playerId)override;
 	virtual void bellActivate()override;

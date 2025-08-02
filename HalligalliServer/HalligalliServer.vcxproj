@@ -124,66 +124,24 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="BellImpl.cpp" />
     <ClCompile Include="CardImpl.cpp" />
     <ClCompile Include="DeckImpl.cpp" />
-    <ClCompile Include="GameMessage.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="MockBell.cpp" />
     <ClCompile Include="MockDeck.cpp" />
-    <ClCompile Include="RoomNotifier.cpp" />
-    <ClCompile Include="RoomNotifierImpl.cpp" />
-    <ClCompile Include="SocketServer.cpp" />
-    <ClCompile Include="TableCardsImpl.cpp" />
-    <ClCompile Include="TableCardsImpl.h" />
-    <ClCompile Include="TableImpl.cpp" />
-    <ClCompile Include="TcpSocket.cpp" />
-    <ClCompile Include="UdpSocket.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BellImpl.h" />
-    <ClInclude Include="BroadcasterImpl.h" />
     <ClInclude Include="CardImpl.h" />
     <ClInclude Include="DeckImpl.h" />
     <ClInclude Include="Fruit.h" />
-    <ClInclude Include="GameMessage.h" />
-    <ClInclude Include="GameStatus.h" />
-    <ClInclude Include="HalligalliGamePlayer.h" />
     <ClInclude Include="IBell.h" />
-    <ClInclude Include="IBroadcaster.h" />
     <ClInclude Include="ICard.h" />
     <ClInclude Include="IDeck.h" />
-    <ClInclude Include="IGamePlayer.h" />
-    <ClInclude Include="IPlayer.h" />
-    <ClInclude Include="IPlayerRoomManager.h" />
-    <ClInclude Include="IRoomPublisher.h" />
-    <ClInclude Include="IRoom.h" />
-    <ClInclude Include="IRoomNotifier.h" />
-    <ClInclude Include="ISender.h" />
-    <ClInclude Include="ITable.h" />
-    <ClInclude Include="ITableCards.h" />
+    <ClInclude Include="MockBell.h" />
     <ClInclude Include="MockDeck.h" />
-    <ClInclude Include="PlayerImpl.h" />
-    <ClInclude Include="PlayerRoomManagerImpl.h" />
-    <ClInclude Include="RoomImpl.h" />
-    <ClInclude Include="RoomNotifierImpl.h" />
-    <ClInclude Include="SenderImpl.h" />
-    <ClInclude Include="ICommander.h" />
-    <ClInclude Include="ICommandMediator.h" />
-    <ClInclude Include="CommandMediatorImpl.h" />
-    <ClInclude Include="Message.h" />
-    <ClInclude Include="IMessageParser.h" />
     <ClInclude Include="main.h" />
-    <ClInclude Include="IServer.h" />
-    <ClInclude Include="ISocket.h" />
-    <ClInclude Include="ISocketCreator.h" />
-    <ClInclude Include="MessageParserImpl.h" />
-    <ClInclude Include="PlayerCommander.h" />
-    <ClInclude Include="RoomCommander.h" />
-    <ClInclude Include="SocketServer.h" />
-    <ClInclude Include="TableImpl.h" />
-    <ClInclude Include="TcpSocket.h" />
-    <ClInclude Include="TcpSocketCreator.h" />
-    <ClInclude Include="UdpSocket.h" />
-    <ClInclude Include="UdpSocketCreator.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
