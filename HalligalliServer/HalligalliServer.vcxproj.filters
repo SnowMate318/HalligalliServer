@@ -52,6 +52,12 @@
     <Filter Include="소스 파일\GameStatusManager">
       <UniqueIdentifier>{c9697025-ee1f-44a0-9144-6c3d0bfaad3c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="헤더 파일\GamePlayer">
+      <UniqueIdentifier>{11d75eb8-f80c-4aa0-adb4-7cc647bf197b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\GamePlayer">
+      <UniqueIdentifier>{484cb02a-540f-4993-8c29-979a792d6a5e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -80,6 +86,9 @@
     </ClCompile>
     <ClCompile Include="GameStatusManagerImpl.cpp">
       <Filter>소스 파일\GameStatusManager</Filter>
+    </ClCompile>
+    <ClCompile Include="GamePlayerImpl.cpp">
+      <Filter>소스 파일\GamePlayer</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -136,6 +145,12 @@
     </ClInclude>
     <ClInclude Include="GameStatus.h">
       <Filter>헤더 파일\GameStatusManager</Filter>
+    </ClInclude>
+    <ClInclude Include="IGamePlayer.h">
+      <Filter>헤더 파일\GamePlayer</Filter>
+    </ClInclude>
+    <ClInclude Include="GamePlayerImpl.h">
+      <Filter>헤더 파일\GamePlayer</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

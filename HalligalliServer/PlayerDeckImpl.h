@@ -1,7 +1,7 @@
 #pragma once
 #include <queue>
 #include "IPlayerDeck.h"
-class PlayerDeckImpl : IPlayerDeck {
+class PlayerDeckImpl : public IPlayerDeck {
 
 private:
 	std::queue<ICard*> deck;
