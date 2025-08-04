@@ -2,6 +2,7 @@
 #include "GameMessage.h"
 #include "IPlayerDeck.h"
 #include "ISocketPlayermanager.h"
+#include "IGameManager.h"
 class IGamePlayer {
 private:
 	int playerId;
@@ -10,6 +11,7 @@ private:
 	bool isAlive;
 	IPlayerDeck* playerDeck;
 	ISocketPlayerManager* socketPlayerManager;
+	IGameManager* gameManager;
 public:
 	virtual void playCard() = 0;
 	virtual void penalty() = 0;

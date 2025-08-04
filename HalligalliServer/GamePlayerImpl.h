@@ -1,6 +1,7 @@
 #pragma once
 #include "IGamePlayer.h"
 #include "IPlayerDeck.h"
+#include "IGameManager.h"
 
 class GamePlayerImpl : IGamePlayer {
 private:
@@ -10,10 +11,18 @@ private:
 	bool isAlive;
 	IPlayerDeck* playerDeck;
 	ISocketPlayerManager* socketPlayerManager;
+	IGameManager* gameManager;
+	
 	
 public:
 
-	GamePlayerImpl(int playerId, int roomId, int roomPlayerId, ISocketPlayerManager* socketPlayerManager);
+	GamePlayerImpl(
+		int playerId, 
+		int roomId, 
+		int roomPlayerId, 
+		ISocketPlayerManager* socketPlayerManager,
+		IGameManager* gameManager
+	);
 	~GamePlayerImpl();
 
 	virtual void playCard()override;
