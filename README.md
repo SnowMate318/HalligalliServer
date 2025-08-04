@@ -10,4 +10,4 @@
 
 ### 클래스 다이어그램
 
-<img width="1350" height="1300" alt="할리갈리-설계" src="https://github.com/user-attachments/assets/4da9b60d-f0c9-4a94-b16e-19922a8f2fae" />
+<img width="1361" height="1300" alt="할리갈리_설계" src="https://github.com/user-attachments/assets/54815659-b9fd-4c3a-9529-c44daa88d41a" />
