@@ -58,6 +58,21 @@
     <Filter Include="소스 파일\GamePlayer">
       <UniqueIdentifier>{484cb02a-540f-4993-8c29-979a792d6a5e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="헤더 파일\GameManager">
+      <UniqueIdentifier>{5550fe8f-39a5-4aba-aae4-391909197b09}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\GameMessages">
+      <UniqueIdentifier>{cb66534e-016f-44d8-befa-1e9ff256f6c0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\GameManager">
+      <UniqueIdentifier>{885d7111-c682-499d-85f7-290ac389c516}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Messages">
+      <UniqueIdentifier>{96689ca0-a95a-498e-9bbe-037461cc7527}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\SocketPlayerManager">
+      <UniqueIdentifier>{c2cc9e60-ce1d-4bee-81c9-043e40fddb6a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -89,6 +104,12 @@
     </ClCompile>
     <ClCompile Include="GamePlayerImpl.cpp">
       <Filter>소스 파일\GamePlayer</Filter>
+    </ClCompile>
+    <ClCompile Include="GameManagerImpl.cpp">
+      <Filter>소스 파일\GameManager</Filter>
+    </ClCompile>
+    <ClCompile Include="GameMessage.cpp">
+      <Filter>소스 파일\Messages</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -151,6 +172,18 @@
     </ClInclude>
     <ClInclude Include="GamePlayerImpl.h">
       <Filter>헤더 파일\GamePlayer</Filter>
+    </ClInclude>
+    <ClInclude Include="IGameManager.h">
+      <Filter>헤더 파일\GameManager</Filter>
+    </ClInclude>
+    <ClInclude Include="GameMessage.h">
+      <Filter>헤더 파일\GameMessages</Filter>
+    </ClInclude>
+    <ClInclude Include="GameManagerImpl.h">
+      <Filter>헤더 파일\GameManager</Filter>
+    </ClInclude>
+    <ClInclude Include="ISocketPlayerManager.h">
+      <Filter>헤더 파일\SocketPlayerManager</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

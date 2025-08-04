@@ -18,7 +18,6 @@ GameStatusManagerImpl::updatePlayerDie(int playerId)
 {
 	gameStatus = GameStatus::PLAYER_DIE;
 	targetPlayer = playerId;
-	nextTurnPlayer = (nextTurnPlayer + 1) % playerCount;
 }
 
 void
@@ -26,7 +25,6 @@ GameStatusManagerImpl::updateBellActivate()
 {
 	gameStatus = GameStatus::BELL_ACTIVATE;
 	targetPlayer = -1;
-	nextTurnPlayer = (nextTurnPlayer + 1) % playerCount;
 }
 
 void
@@ -38,7 +36,6 @@ GameStatusManagerImpl::updateBellWin(int playerId)
 
 	gameStatus = GameStatus::BELL_WIN;
 	targetPlayer = playerId;
-	nextTurnPlayer = (nextTurnPlayer + 1) % playerCount;
 }
 
 void
@@ -50,7 +47,6 @@ GameStatusManagerImpl::updatePenalty(int playerId)
 
 	gameStatus = GameStatus::PENALTY;
 	targetPlayer = playerId;
-	nextTurnPlayer = (nextTurnPlayer + 1) % playerCount;
 }
 
 void
@@ -58,7 +54,6 @@ GameStatusManagerImpl::updateNextTurn()
 {
 	gameStatus = GameStatus::NEXT_TURN;
 	targetPlayer = -1;
-	nextTurnPlayer = (nextTurnPlayer + 1) % playerCount;
 }
 
 GameStatus
@@ -77,4 +72,10 @@ int
 GameStatusManagerImpl::getNextTurnPlayer()
 {
 	return this->nextTurnPlayer;
+}
+
+void 
+GameStatusManagerImpl::setNextTurnPlayer(int playerId)
+{
+	this->nextTurnPlayer = playerId;
 }

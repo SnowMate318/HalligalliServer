@@ -19,5 +19,6 @@ public:
 	virtual GameStatus getGameStatus() = 0;
 	virtual int getTargetPlayer() = 0;
 	virtual int getNextTurnPlayer() = 0;
+	virtual void setNextTurnPlayer(int playerId) = 0;
 
 };

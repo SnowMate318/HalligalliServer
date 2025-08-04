@@ -24,5 +24,5 @@ public:
 	virtual GameStatus getGameStatus()override;
 	virtual int getTargetPlayer()override;
 	virtual int getNextTurnPlayer()override;
-
+	virtual void setNextTurnPlayer(int playerId)override;
 };
