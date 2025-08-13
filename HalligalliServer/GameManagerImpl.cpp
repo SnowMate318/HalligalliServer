@@ -1,7 +1,8 @@
 #include "GameManagerImpl.h"
+#include "GameRoleImpl.h"
 
 GameManagerImpl::GameManagerImpl(
-	std::vector<IGamePlayer*> players, 
+	std::vector<Player*> players, 
 	std::vector<IPlayerDeck*> playerDecks, 
 	int playerCount,
 	IBell* bell, 
@@ -26,8 +27,14 @@ void
 GameManagerImpl::playCard(int playerId)
 {
 	ICard* card = playerDecks[playerId]->giveCard();
+    GameRoleImpl* playerRole = dynamic_cast<GameRoleImpl*>(players[playerId]->getRole());  
+
+    if (playerRole == nullptr) {  
+        return;  
+    }
+
 	if (card == nullptr) {
-		players[playerId]->die();
+		playerRole->die();
 		gameStatusManager->updatePlayerDie(playerId);
 		return;
 	}
@@ -41,15 +48,17 @@ GameManagerImpl::penalty(int playerId)
 {
 	ICard* card;
 	int targetId;
-
+	GameRoleImpl* playerRole;
 	for (int i = 1; i <= playerCount; i++) {
 		targetId = (playerId + i) % playerCount;
 
-		if (!players[targetId]->isPlayerAlive()) continue;
+		playerRole = dynamic_cast<GameRoleImpl*>(players[targetId]->getRole());
+
+		if (playerRole->isPlayerAlive()) continue;
 
 		card = playerDecks[playerId]->giveCard();
 		if (card == nullptr) {
-			players[playerId]->die();
+			playerRole->die();
 			gameStatusManager->updatePlayerDie(playerId);
 			return;
 		}
@@ -62,7 +71,8 @@ GameManagerImpl::penalty(int playerId)
 void 
 GameManagerImpl::playerDie(int playerId) // 플레이어가 나갔을 때 호출 (보통은 다른 메소드에서 호출)
 {
-	players[playerId]->die();
+	GameRoleImpl* playerRole = dynamic_cast<GameRoleImpl*>(players[playerId]->getRole());
+	playerRole->die();
 	
 	if (gameStatusManager->getNextTurnPlayer() == playerId) {
 		gameStatusManager->setNextTurnPlayer((playerId + 1) % playerCount);
@@ -99,8 +109,11 @@ void
 GameManagerImpl::sendMessageToAll()
 {
 	GameMessage message = createInfoMessage();
+	GameRoleImpl* playerRole;
+
 	for (int i = 0; i < playerCount; i++) {
-		if (players[i]->isPlayerAlive()) {
+		playerRole = dynamic_cast<GameRoleImpl*>(players[i]->getRole());
+		if (playerRole->isPlayerAlive()) {
 			players[i]->sendMessageToSocket(message);
 		}
 	}

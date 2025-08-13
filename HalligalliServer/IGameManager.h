@@ -1,6 +1,6 @@
 #pragma once
 #include <vector>
-#include "IGamePlayer.h"
+#include "GamePlayer.h"
 #include "IPlayerDeck.h"
 #include "IBell.h"
 #include "ITableDeck.h"
@@ -11,7 +11,7 @@
 class IGameManager {
 
 private:
-	std::vector<IGamePlayer*> players;
+	std::vector<GamePlayer*> players;
 	std::vector<IPlayerDeck*> playerDecks;
 	IBell* bell;
 	ITableDeck* tableDeck;

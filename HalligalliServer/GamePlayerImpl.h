@@ -1,36 +1,18 @@
 #pragma once
 #include "IGamePlayer.h"
-#include "IPlayerDeck.h"
-#include "IGameManager.h"
 
-class GamePlayerImpl : IGamePlayer {
+class GamePlayerImpl : public IGamePlayer {
+
 private:
-	int playerId;
-	int roomId;
-	int roomPlayerId;
-	bool isAlive;
-	IPlayerDeck* playerDeck;
-	ISocketPlayerManager* socketPlayerManager;
-	IGameManager* gameManager;
-	
-	
+	IPlayerManager* playerManager;
+
 public:
 
-	GamePlayerImpl(
-		int playerId, 
-		int roomId, 
-		int roomPlayerId, 
-		ISocketPlayerManager* socketPlayerManager,
-		IGameManager* gameManager
-	);
-	~GamePlayerImpl();
+	GamePlayerImpl(IPlayerManager* playerManager) : playerManager(playerManager) {}
+	~GamePlayerImpl() {}
 
-	virtual void playCard()override;
-	virtual void penalty()override;
-	virtual void pressBell(int diff)override;
-	virtual void die()override;
-	virtual bool isPlayerAlive()override;
-	virtual int getRemainingCardCount()override;
+	virtual bool playCard() = 0;
+	virtual void ringBell(int press_time_diff) = 0;
+	virtual void penalty() = 0;
 
-	virtual void sendMessageToSocket(GameMessage message)override;
 };

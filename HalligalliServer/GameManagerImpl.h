@@ -1,9 +1,9 @@
 #pragma once
 #include "IGameManager.h"
-
-class GameManagerImpl : IGameManager {
+#include "Player.h"
+class GameManagerImpl : public IGameManager {
 private:
-	std::vector<IGamePlayer*> players;
+	std::vector<Player*> players;
 	std::vector<IPlayerDeck*> playerDecks;
 	int playerCount;
 	IBell* bell;
@@ -16,7 +16,7 @@ private:
 public:
 
 	GameManagerImpl(
-		std::vector<IGamePlayer*> players,
+		std::vector<Player*> players,
 		std::vector<IPlayerDeck*> playerDecks,
 		int playerCount,
 		IBell* bell,

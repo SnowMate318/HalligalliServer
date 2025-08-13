@@ -3,7 +3,7 @@
 #include <vector>
 #include <unordered_map>
 
-class FrontCardsImpl : IFrontCards {
+class FrontCardsImpl : public IFrontCards {
 
 private:
 	std::vector<ICard*> cards;

@@ -6,7 +6,7 @@
 
 struct PlayerBellInfo;
 
-class BellImpl : IBell {
+class BellImpl : public IBell {
 private:
 	bool isActivate;
 	bool onThread;
