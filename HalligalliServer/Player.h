@@ -4,5 +4,5 @@
 
 class Player {
 public:
-	virtual void sendMessageToPlayerManager(Message* message) = 0;
+	//virtual void sendMessageToPlayerManager(Message* message) = 0;
 };

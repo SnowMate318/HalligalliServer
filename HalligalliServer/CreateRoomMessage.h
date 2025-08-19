@@ -3,11 +3,11 @@
 
 class CreateRoomMessage : public RequestMessage {
 
-	std::string room_title;
-	int player_id;
+	std::string roomName;
+	int playerId;
 public:
 
-	CreateRoomMessage(std::string room_title, int player_id) : room_title(room_title), player_id(player_id) {};
+	CreateRoomMessage(std::string roomName, int playerId) : roomName(roomName), playerId(playerId) {};
 	~CreateRoomMessage() {}
 
 	virtual void messageExecute(IPlayerManager* playerManager)override;

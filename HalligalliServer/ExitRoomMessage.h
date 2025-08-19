@@ -3,12 +3,12 @@
 
 class ExitRoomMessage : public RequestMessage {
 private:
-    int room_id;
-    int player_id;
+    int roomId;
+    int roomPlayerIndex;
 
 public:
-    ExitRoomMessage(int room_id, int player_id)
-        : room_id(room_id), player_id(player_id) {
+    ExitRoomMessage(int roomId, int roomPlayerIndex)
+        : roomId(roomId), roomPlayerIndex(roomPlayerIndex) {
     }
 
     ~ExitRoomMessage() {}

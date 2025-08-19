@@ -26,14 +26,8 @@ public:
 	TcpSocket(int id, SOCKET clientSock, sockaddr_storage addr) : id(id), clientSock(clientSock), addr(addr) {}
 	~TcpSocket();
 
-	virtual void setUsername(std::string username)
-	{
-		this->username = username;
-	}
-	virtual std::string getUsername()
-	{
-		return this->username;
-	}
+	virtual void setUsername(std::string username)override;
+	virtual std::string getUsername()override;
 
 	virtual void startListening()override;
 	virtual void send(ResponseMessage* message)override;

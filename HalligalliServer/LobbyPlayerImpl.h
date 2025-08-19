@@ -1,16 +1,19 @@
 #pragma once
 #include "ILobbyPlayer.h"
+#include "LobbyImpl.h"
 
 class LobbyPlayerImpl : public ILobbyPlayer {
 private:
+	int playerId;
 	IPlayerManager* playerManager;
+	ILobby* lobby;
 public:
 
-	LobbyPlayerImpl(IPlayerManager* playerManager) : playerManager(playerManager) {}
+	LobbyPlayerImpl(IPlayerManager* playerManager, int playerId) : playerManager(playerManager), playerId(playerId){
+		lobby = LobbyImpl::instance();
+	}
 	~LobbyPlayerImpl() {}
 
-	virtual void findRooms(int page)override;
-	virtual void createRoom(std::string roomName)override;
-	virtual void deleteRoom(int roomId)override;
-	virtual void enterRoom(int page, IRoomPlayer* roomPlayer)override;
+	virtual int getPlayerId()override;
+
 };

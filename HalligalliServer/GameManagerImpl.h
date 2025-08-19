@@ -1,30 +1,39 @@
 #pragma once
 #include "IGameManager.h"
 #include "Player.h"
+
+class GameMessage;
+
 class GameManagerImpl : public IGameManager {
 private:
-	std::vector<Player*> players;
-	std::vector<IPlayerDeck*> playerDecks;
+	std::unordered_map<int, IGamePlayer*> players;
+	std::unordered_map<int, IPlayerDeck*> playerDecks;
 	int playerCount;
 	IBell* bell;
 	ITableDeck* tableDeck;
 	IFrontCards* frontCards;
 	IGameStatusManager* gameStatusManager;
 
-	virtual GameMessage createInfoMessage()override;
+	GameMessage createInfoMessage();
 
 public:
 
 	GameManagerImpl(
-		std::vector<Player*> players,
-		std::vector<IPlayerDeck*> playerDecks,
 		int playerCount,
 		IBell* bell,
 		ITableDeck* tableDeck,
 		IFrontCards* frontCards,
 		IGameStatusManager* gameStatusManager
-	);
-	~GameManagerImpl();
+	) : playerCount(playerCount), 
+		bell(bell), 
+		tableDeck(tableDeck), 
+		frontCards(frontCards), 
+		gameStatusManager(gameStatusManager) { }
+	~GameManagerImpl() {
+		//Todo: 플레이어 카드 딜리트
+	}
+
+	virtual void addPlayers(int roomPlayerIndex, IGamePlayer* gamePlayer)override;
 
 	virtual void playCard(int playerId)override;
 	virtual void penalty(int playerId)override;

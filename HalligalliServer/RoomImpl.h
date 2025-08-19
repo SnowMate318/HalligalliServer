@@ -21,8 +21,10 @@ public:
 	RoomImpl(int roomId, std::string roomName);
 	~RoomImpl();
 
-	virtual int addPlayer(IRoomPlayer* player)override;
+	virtual bool addPlayer(IRoomPlayer* player)override;
 	virtual void removePlayer(int playerId)override;
+
+	virtual bool checkAllPlayersReady()override;
 	virtual void gameStart()override;
 
 	virtual int getRoomId()override;

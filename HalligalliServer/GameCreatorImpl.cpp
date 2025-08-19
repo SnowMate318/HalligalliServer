@@ -1,38 +1,26 @@
 #include "GameCreatorImpl.h"
-#include "GameRoleImpl.h"
-
 #include "BellImpl.h"
 #include "FrontCardsImpl.h"
 #include "TableDeckImpl.h"
 #include "GameStatusManagerImpl.h"
 #include "GameManagerImpl.h"
+#include "GamePlayerImpl.h"
 #include "PlayerDeckImpl.h"
 
-IRole*
-GameCreatorImpl::createGameRole(Player* player, IPlayerDeck* playerDeck, int playerIndex)  
-{  
-	return new GameRoleImpl(  
-		player->getId(),  
-		this->roomId,  
-		playerIndex,  
-		playerDeck, 
-		this->gameManager  
-	);  
-}
 
-GameCreatorImpl::GameCreatorImpl(int roomId, std::vector<Player*> players)
+GameCreatorImpl::GameCreatorImpl(IRoom* room)
 {
-	this->roomId = roomId;
-	IPlayerDeck* playerDeck;
-	IRole* gameRole;
+	this->room = room;
 
-	int idx = 0;
-	for (Player* player : players) {
-		playerDeck = new PlayerDeckImpl();
-		gameRole = createGameRole(player, playerDeck, idx++);
-		player->setRole(gameRole);
-		playerDecks.push_back(playerDeck);
-	}
+	//IPlayerDeck* playerDeck;
+
+	//int idx = 0;
+	//for (Player* player : players) {
+	//	playerDeck = new PlayerDeckImpl();
+	//	gameRole = createGameRole(player, playerDeck, idx++);
+	//	player->setRole(gameRole);
+	//	playerDecks.push_back(playerDeck);
+	//}
 }
 
 GameCreatorImpl::~GameCreatorImpl()
@@ -54,8 +42,7 @@ GameCreatorImpl::createGame()
 
 
 	this->gameManager = new GameManagerImpl(
-		this->players,
-		this->playerDecks,
+		
 		this->players.size(),
 		this->bell,
 		this->tableDeck,

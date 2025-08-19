@@ -103,6 +103,7 @@
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>C:\workspace\HalligalliServer\lib\</AdditionalIncludeDirectories>
+      <CompileAs>Default</CompileAs>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -133,9 +134,13 @@
     <ClCompile Include="FrontCardsImpl.cpp" />
     <ClCompile Include="GameCreatorImpl.cpp" />
     <ClCompile Include="GameManagerImpl.cpp" />
+    <ClCompile Include="GameMessage.h" />
+    <ClCompile Include="GamePlayerImpl.cpp" />
     <ClCompile Include="GameStartMessage.cpp" />
     <ClCompile Include="GameStatusManagerImpl.cpp" />
     <ClCompile Include="JoinRoomMessage.cpp" />
+    <ClCompile Include="LobbyImpl.cpp" />
+    <ClCompile Include="LobbyPlayerImpl.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MockBell.cpp" />
     <ClCompile Include="MockTableDeck.cpp" />
@@ -146,6 +151,7 @@
     <ClCompile Include="ReadyMessage.cpp" />
     <ClCompile Include="ResponseMessage.cpp" />
     <ClCompile Include="RoomImpl.cpp" />
+    <ClCompile Include="RoomPlayerImpl.cpp" />
     <ClCompile Include="ServerImpl.cpp" />
     <ClCompile Include="SocketManagerImpl.cpp" />
     <ClCompile Include="TableDeckImpl.cpp" />
@@ -180,6 +186,7 @@
     <ClInclude Include="IPlayerManager.h" />
     <ClInclude Include="ISocket.h" />
     <ClInclude Include="JoinRoomMessage.h" />
+    <ClInclude Include="LobbyImpl.h" />
     <ClInclude Include="LobbyMessage.h" />
     <ClInclude Include="ILobbyPlayer.h" />
     <ClInclude Include="LobbyPlayerImpl.h" />

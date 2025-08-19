@@ -3,10 +3,10 @@
 
 class JoinRoomMessage : public RequestMessage {
 private:
-    int room_id;
+    int roomId;
 
 public:
-    JoinRoomMessage(int room_id) : room_id(room_id) {}
+    JoinRoomMessage(int room_id) : roomId(roomId) {}
     ~JoinRoomMessage() {}
 
     virtual void messageExecute(IPlayerManager* playerManager) override;

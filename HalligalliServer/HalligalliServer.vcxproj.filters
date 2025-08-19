@@ -52,9 +52,6 @@
     <Filter Include="소스 파일\GameStatusManager">
       <UniqueIdentifier>{c9697025-ee1f-44a0-9144-6c3d0bfaad3c}</UniqueIdentifier>
     </Filter>
-    <Filter Include="소스 파일\GamePlayer">
-      <UniqueIdentifier>{484cb02a-540f-4993-8c29-979a792d6a5e}</UniqueIdentifier>
-    </Filter>
     <Filter Include="헤더 파일\GameManager">
       <UniqueIdentifier>{5550fe8f-39a5-4aba-aae4-391909197b09}</UniqueIdentifier>
     </Filter>
@@ -114,6 +111,15 @@
     </Filter>
     <Filter Include="소스 파일\PlayerManager">
       <UniqueIdentifier>{fe0dcc54-89ea-4694-8392-7c54fedfafb1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Player">
+      <UniqueIdentifier>{882aa448-5c00-4986-bf82-8b56751fc423}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\Lobby">
+      <UniqueIdentifier>{2cbb4867-8d35-4798-b635-65b74e8a9b83}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\ResponseMessage">
+      <UniqueIdentifier>{b27518b9-a636-4375-a369-17470866d23d}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -196,7 +202,22 @@
       <Filter>소스 파일\RequestMessage</Filter>
     </ClCompile>
     <ClCompile Include="CreateRoomMessage.cpp">
+      <Filter>소스 파일\RequestMessage</Filter>
+    </ClCompile>
+    <ClCompile Include="RoomPlayerImpl.cpp">
+      <Filter>소스 파일\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="LobbyImpl.cpp">
       <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="GamePlayerImpl.cpp">
+      <Filter>소스 파일\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="LobbyPlayerImpl.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="GameMessage.h">
+      <Filter>헤더 파일\ResponseMessage</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -259,9 +280,6 @@
     </ClInclude>
     <ClInclude Include="GameManagerImpl.h">
       <Filter>헤더 파일\GameManager</Filter>
-    </ClInclude>
-    <ClInclude Include="ILobby.h">
-      <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="IServer.h">
       <Filter>헤더 파일\Server</Filter>
@@ -373,6 +391,12 @@
     </ClInclude>
     <ClInclude Include="UnreadyMessage.h">
       <Filter>헤더 파일\RequestMessage</Filter>
+    </ClInclude>
+    <ClInclude Include="ILobby.h">
+      <Filter>헤더 파일\Lobby</Filter>
+    </ClInclude>
+    <ClInclude Include="LobbyImpl.h">
+      <Filter>헤더 파일\Lobby</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

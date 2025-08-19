@@ -1,4 +1,5 @@
 #include "PressBellMessage.h"
+#include "GamePlayerImpl.h"
 
 void PressBellMessage::messageExecute(IPlayerManager* playerManager)
 {

@@ -2,7 +2,7 @@
 
 enum ResponseStatus {
 
-	OK,
-	ERROR
+	RESPONSE_OK,
+	RESPONSE_ERROR
 
 };

@@ -3,11 +3,12 @@
 
 class GameStartMessage : public RequestMessage {
 private:
-    int room_id;
+    int roomId;
 
 public:
-    GameStartMessage(int room_id)
-        : room_id(room_id) {}
+    GameStartMessage(int roomId)
+        : roomId(roomId) {}
+
 
     ~GameStartMessage() {}
 

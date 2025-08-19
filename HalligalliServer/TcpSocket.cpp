@@ -4,6 +4,16 @@ TcpSocket::~TcpSocket()
 {
 }
 
+void TcpSocket::setUsername(std::string username)
+{
+    this->username = username;
+}
+
+std::string TcpSocket::getUsername()
+{
+    return username;
+}
+
 void TcpSocket::startListening()
 {
     constexpr int BUF_SIZE = 4096;

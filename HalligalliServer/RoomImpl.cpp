@@ -1,5 +1,7 @@
 #include "RoomImpl.h"
 #include "GameCreatorImpl.h"
+#include "IRoomPlayer.h"
+
 #define MAX_PLAYER 4
 
 RoomImpl::RoomImpl(int roomId, std::string roomName)
@@ -8,24 +10,23 @@ RoomImpl::RoomImpl(int roomId, std::string roomName)
 	this->roomName = roomName;
 	this->playerCount = 0;
 	this->gameStarted = false;
-	this->gameCreator = new GameCreatorImpl(roomId, this->players);
+	this->gameCreator = nullptr;
 }
 
 RoomImpl::~RoomImpl()
 {
 }
 
-int 
+bool 
 RoomImpl::addPlayer(IRoomPlayer* player)
 {
-	if (playerCount >= MAX_PLAYER) return -1;
+	if (playerCount >= MAX_PLAYER) return false;
 
 	players.push_back(player);
-	playerCount++;
+	player->setRoomInfo(roomId, playerCount++);
+	
 
-	// Rome Role 생성 후 사용자에게 이식?
-
-	return players.size()-1;
+	return true;
 }
 
 void 
@@ -36,10 +37,24 @@ RoomImpl::removePlayer(int playerId)
 	playerCount--;
 }
 
-void 
+bool 
+RoomImpl::checkAllPlayersReady()
+{
+	for (IRoomPlayer* player : players) {
+		if (!player->getReady()) return false;
+	}
+	return true;
+}
+
+void
 RoomImpl::gameStart()
 {
 	this->gameStarted = true;
+	// gamePlayer 만들기
+	for (int i = 0; i < players.size(); i++) {
+		players[i]->startGame(roomId, i);
+	}
+	
 	this->gameCreator->createGame();
 }
 
