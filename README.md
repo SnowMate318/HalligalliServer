@@ -10,4 +10,4 @@
 
 ### 클래스 다이어그램
 
-<img width="1449" height="1150" alt="제목 없는 다이어그램-페이지-6 drawio" src="https://github.com/user-attachments/assets/9a0551c5-b5f2-4da5-a10d-d7cc903831a3" />
+<img width="3153" height="1057" alt="할리갈리_최종 drawio" src="https://github.com/user-attachments/assets/a0519679-855c-49fc-a517-c3448547374f" />
