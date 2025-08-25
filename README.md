@@ -44,38 +44,6 @@
 ### 요청 명세
 
 
-| **Action** | **설명** | **Data 예시** |
-| --- | --- | --- |
-| join | 이름 전송 | { "name": "Alice" } |
-| start_game | 방장 게임 시작 | {} |
-| ready | 준비 완료 | {} |
-| open_card | 카드 오픈 요청 | {} |
-| press_bell | 벨 누름 | { "press_time_diff": 230 } |
-| find_room | 생성된 방 전체 조회 | {} |
-| find_room | 방 id로 조회 | {”id”: 1} | 
-| join_room | 방 참여 | {”id”:1} |  
-
-
-
-| **Action** | **설명** | **Data 예시** |
-| --- | --- | --- |
-| user_joined | 1명 입장 | { "id": 2, "name": "Alice" } |
-| user_left | 1명 퇴장 | { "id": 2 } |
-| current_users | 현재 유저 목록 | { "users": [ { "id": 1, "name": "Host" }, ... ] } |
-| game_started | 게임 시작 | {} |
-| card_revealed | 카드 공개됨 | { "id": 2, "card": { "num": 3, "type": "banana" }, "remaining_cards": 11 } |
-| turn_changed | 턴 넘김 | { "id": 3 } |
-| round_winner | 라운드 승리 | { "id": 1 } |
-| penalty_given | 패널티 발생 | { "id": 3, "reason": "invalid_bell" } |
-| player_lost | 플레이어 탈락 | { "id": 2 } |
-| game_winner | 게임 승리 | { "id": 1 } |
-| all_ready | 모두 준비 완료 (방장에게만) | {} |
-|  |  |  |
-|  |  |  |
-|  |  |  |
-|  |  |  |
-
-
 
 #### CREATE_ROOM ( 방 생성)
 
