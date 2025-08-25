@@ -9,5 +9,5 @@ public:
 	virtual std::string getUsername() = 0;
 	
 	virtual void startListening() = 0;
-	virtual void send(ResponseMessage* message) = 0;
+	virtual void jsonSend(ResponseMessage* message) = 0;
 };

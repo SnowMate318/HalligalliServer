@@ -14,7 +14,7 @@ private:
 
 	IGamePlayer* gamePlayer;
 	IRoomPlayer* roomPlayer;
-
+	
 public:
 
 	PlayerManagerImpl(int socketId, std::string playerName);
@@ -27,7 +27,7 @@ public:
 	virtual int getSocketId()override;
 	virtual std::string getPlayerName()override;
 
-	virtual void sendMessageToUser(Message* message)override;
+	virtual void sendMessageToSocket(Message* message)override;
 	virtual void resetPlayerInfo(Role role)override;
 	virtual void createGamePlayer(int roomId, int roomPlayerIndex, IGame* game)override;
 	virtual void createRoomPlayer(IRoom* room)override;

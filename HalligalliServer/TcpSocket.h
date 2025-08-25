@@ -40,7 +40,7 @@ public:
 	virtual std::string getUsername()override;
 
 	virtual void startListening()override;
-	virtual void send(ResponseMessage* message)override;
+	virtual void jsonSend(ResponseMessage* message)override;
 
 };
 

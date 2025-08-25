@@ -1,10 +1,10 @@
 #pragma once
 #include "IGame.h"
-#include "Player.h"
 #include "CardImpl.h"
 #include "FrontCardsImpl.h"
+#include "GameMessage.h"
 
-class GameMessage;
+//class GameMessage;
 
 class GameImpl : public IGame {
 private:

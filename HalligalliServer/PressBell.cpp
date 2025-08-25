@@ -6,5 +6,5 @@ void PressBell::execute()
 
 	IGamePlayer* gamePlayer = playerManager->getGamePlayer();
 
-	gamePlayer->ringBell(press_time_diff);
+	gamePlayer->ringBell(pressTimeDiff);
 }

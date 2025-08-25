@@ -40,9 +40,10 @@ std::string PlayerManagerImpl::getPlayerName()
 	return playerName;
 }
 
-void PlayerManagerImpl::sendMessageToUser(Message* message)
+void PlayerManagerImpl::sendMessageToSocket(Message* message)
 {
-	//socketManager->sendMessage(playerId, message);
+
+	SocketPlayerManager::instance().sendMessage(socketId, message);
 }
 
 

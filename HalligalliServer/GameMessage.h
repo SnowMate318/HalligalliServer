@@ -2,7 +2,8 @@
 #include "Action.h"
 #include "IGamePlayer.h"
 #include "IFrontCards.h"
-class GameMessage : Message{
+
+class GameMessage : public Message{
 
 private:
 	Action status;

@@ -13,12 +13,12 @@ void SocketPlayerManager::deletePlayerManager(int removeId)
 	delete playerManager;
 }
 
-void SocketPlayerManager::sendMessage(int playerId, Message* message)
+void SocketPlayerManager::sendMessage(int socketId, Message* message)
 {
 	//Todo: Socket에게 네트워크메세지로 보냄
 	ResponseMessage* response = new ResponseMessage(ResponseStatus::RESPONSE_OK, message);
 
-	sockets[playerId]->send(response);
+	sockets[socketId]->jsonSend(response);
 
 	delete response;
 }

@@ -25,10 +25,10 @@ public:
 	virtual int getSocketId() = 0;
 	virtual std::string getPlayerName() = 0;
 
-	virtual void sendMessageToUser(Message* message) = 0;
+	virtual void sendMessageToSocket(Message* message) = 0;
 	virtual void resetPlayerInfo(Role role) = 0;
 	virtual void createGamePlayer(int roomId, int roomPlayerIndex, IGame* game) = 0;
 	virtual void createRoomPlayer(IRoom* room) = 0;
 
-
+	  
 };

@@ -97,9 +97,6 @@
     <Filter Include="헤더 파일\Lobby">
       <UniqueIdentifier>{2cbb4867-8d35-4798-b635-65b74e8a9b83}</UniqueIdentifier>
     </Filter>
-    <Filter Include="헤더 파일\ResponseMessage">
-      <UniqueIdentifier>{b27518b9-a636-4375-a369-17470866d23d}</UniqueIdentifier>
-    </Filter>
     <Filter Include="헤더 파일\Request">
       <UniqueIdentifier>{34253acd-8ca8-43c7-a8d2-af82666414e5}</UniqueIdentifier>
     </Filter>
@@ -210,17 +207,17 @@
     <ClCompile Include="GamePlayerImpl.cpp">
       <Filter>소스 파일\Player</Filter>
     </ClCompile>
-    <ClCompile Include="GameMessage.h">
-      <Filter>헤더 파일\ResponseMessage</Filter>
-    </ClCompile>
     <ClCompile Include="Lobby.cpp">
       <Filter>소스 파일\Lobby</Filter>
     </ClCompile>
     <ClCompile Include="RoomInfoMessage.cpp">
       <Filter>소스 파일\Messages</Filter>
     </ClCompile>
+    <ClCompile Include="GameMessage.h">
+      <Filter>헤더 파일\Message</Filter>
+    </ClCompile>
     <ClCompile Include="GameMessage.cpp">
-      <Filter>소스 파일</Filter>
+      <Filter>소스 파일\Messages</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

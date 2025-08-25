@@ -31,10 +31,14 @@ void TcpSocket::startListening()
         executeCommand(buf);
     }
 }
-void TcpSocket::send(ResponseMessage* message)
+void TcpSocket::jsonSend(ResponseMessage* message)
 {
     json response = message->toJson();
+    auto s = response.dump() + "\n";
+    send(clientSock, s.c_str(), (int)s.size(), 0);
+#if _DEBUG
 
+#endif
 }
 
 json TcpSocket::messageToJson(Message* message)
