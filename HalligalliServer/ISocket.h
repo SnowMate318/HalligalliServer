@@ -1,7 +1,7 @@
 #pragma once
 #include <string>
 #include "ResponseMessage.h"
-#include "ISocketManager.h"
+
 class ISocket {
 
 public:

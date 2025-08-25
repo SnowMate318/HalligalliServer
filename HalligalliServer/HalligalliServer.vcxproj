@@ -76,6 +76,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>C:\workspace\HalligalliServer\lib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -127,80 +128,77 @@
   <ItemGroup>
     <ClCompile Include="BellImpl.cpp" />
     <ClCompile Include="CardImpl.cpp" />
-    <ClCompile Include="CardRevealedMessage.cpp" />
-    <ClCompile Include="CreateRoomMessage.cpp" />
-    <ClCompile Include="ExitRoomMessage.cpp" />
-    <ClCompile Include="FindRoomMessage.cpp" />
+    <ClCompile Include="CardRevealed.cpp" />
+    <ClCompile Include="CreateRoom.cpp" />
+    <ClCompile Include="ExitRoom.cpp" />
+    <ClCompile Include="FindRoom.cpp" />
     <ClCompile Include="FrontCardsImpl.cpp" />
     <ClCompile Include="GameCreatorImpl.cpp" />
-    <ClCompile Include="GameManagerImpl.cpp" />
+    <ClCompile Include="GameImpl.cpp" />
+    <ClCompile Include="GameMessage.cpp" />
     <ClCompile Include="GameMessage.h" />
     <ClCompile Include="GamePlayerImpl.cpp" />
-    <ClCompile Include="GameStartMessage.cpp" />
+    <ClCompile Include="GameStart.cpp" />
     <ClCompile Include="GameStatusManagerImpl.cpp" />
-    <ClCompile Include="JoinRoomMessage.cpp" />
-    <ClCompile Include="LobbyImpl.cpp" />
-    <ClCompile Include="LobbyPlayerImpl.cpp" />
+    <ClCompile Include="JoinRoom.cpp" />
+    <ClCompile Include="Lobby.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MockBell.cpp" />
     <ClCompile Include="MockTableDeck.cpp" />
-    <ClCompile Include="PenaltyGivenMessage.cpp" />
+    <ClCompile Include="PenaltyGiven.cpp" />
     <ClCompile Include="PlayerDeckImpl.cpp" />
     <ClCompile Include="PlayerManagerImpl.cpp" />
-    <ClCompile Include="PressBellMessage.cpp" />
-    <ClCompile Include="ReadyMessage.cpp" />
+    <ClCompile Include="PressBell.cpp" />
+    <ClCompile Include="Ready.cpp" />
     <ClCompile Include="ResponseMessage.cpp" />
     <ClCompile Include="RoomImpl.cpp" />
+    <ClCompile Include="RoomInfoMessage.cpp" />
     <ClCompile Include="RoomPlayerImpl.cpp" />
     <ClCompile Include="ServerImpl.cpp" />
-    <ClCompile Include="SocketManagerImpl.cpp" />
+    <ClCompile Include="SocketPlayerManager.cpp" />
     <ClCompile Include="TableDeckImpl.cpp" />
     <ClCompile Include="TcpSocket.cpp" />
-    <ClCompile Include="UnreadyMessage.cpp" />
+    <ClCompile Include="Unready.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Action.h" />
     <ClInclude Include="BellImpl.h" />
     <ClInclude Include="CardImpl.h" />
-    <ClInclude Include="CardRevealedMessage.h" />
-    <ClInclude Include="CreateRoomMessage.h" />
+    <ClInclude Include="CardRevealed.h" />
+    <ClInclude Include="CreateRoom.h" />
     <ClInclude Include="Exception.h" />
-    <ClInclude Include="ExitRoomMessage.h" />
-    <ClInclude Include="FindRoomMessage.h" />
+    <ClInclude Include="ExitRoom.h" />
+    <ClInclude Include="FindRoom.h" />
     <ClInclude Include="FrontCardsImpl.h" />
     <ClInclude Include="Fruit.h" />
     <ClInclude Include="GamePlayerImpl.h" />
-    <ClInclude Include="GameStartMessage.h" />
+    <ClInclude Include="GameStart.h" />
     <ClInclude Include="IGamePlayer.h" />
     <ClInclude Include="IGameCreator.h" />
     <ClInclude Include="GameCreatorImpl.h" />
-    <ClInclude Include="GameManagerImpl.h" />
-    <ClInclude Include="IGameManager.h" />
-    <ClInclude Include="GameStatus.h" />
+    <ClInclude Include="GameImpl.h" />
+    <ClInclude Include="IGame.h" />
     <ClInclude Include="GameStatusManagerImpl.h" />
     <ClInclude Include="IBell.h" />
     <ClInclude Include="ICard.h" />
     <ClInclude Include="IFrontCards.h" />
     <ClInclude Include="IGameStatusManager.h" />
-    <ClInclude Include="ILobby.h" />
     <ClInclude Include="IPlayerManager.h" />
     <ClInclude Include="ISocket.h" />
-    <ClInclude Include="JoinRoomMessage.h" />
-    <ClInclude Include="LobbyImpl.h" />
-    <ClInclude Include="LobbyMessage.h" />
-    <ClInclude Include="ILobbyPlayer.h" />
-    <ClInclude Include="LobbyPlayerImpl.h" />
+    <ClInclude Include="JoinRoom.h" />
+    <ClInclude Include="Lobby.h" />
     <ClInclude Include="Message.h" />
     <ClInclude Include="ParsingException.h" />
-    <ClInclude Include="PenaltyGivenMessage.h" />
+    <ClInclude Include="PenaltyGiven.h" />
     <ClInclude Include="Player.h" />
+    <ClInclude Include="PlayerEnter.h" />
+    <ClInclude Include="PlayerExit.h" />
     <ClInclude Include="PlayerManagerImpl.h" />
-    <ClInclude Include="PressBellMessage.h" />
-    <ClInclude Include="ReadyMessage.h" />
-    <ClInclude Include="RequestMessage.h" />
+    <ClInclude Include="PressBell.h" />
+    <ClInclude Include="Ready.h" />
+    <ClInclude Include="Request.h" />
     <ClInclude Include="ResponseMessage.h" />
     <ClInclude Include="IRoom.h" />
-    <ClInclude Include="ISocketManager.h" />
     <ClInclude Include="ITableDeck.h" />
     <ClInclude Include="MockTableDeck.h" />
     <ClInclude Include="IPlayerDeck.h" />
@@ -210,14 +208,15 @@
     <ClInclude Include="RoomImpl.h" />
     <ClInclude Include="IServer.h" />
     <ClInclude Include="IRoomPlayer.h" />
+    <ClInclude Include="RoomInfoMessage.h" />
     <ClInclude Include="RoomPlayerImpl.h" />
     <ClInclude Include="ServerImpl.h" />
-    <ClInclude Include="SocketManagerImpl.h" />
+    <ClInclude Include="SocketPlayerManager.h" />
     <ClInclude Include="TableDeckImpl.h" />
     <ClInclude Include="MockBell.h" />
     <ClInclude Include="main.h" />
     <ClInclude Include="TcpSocket.h" />
-    <ClInclude Include="UnreadyMessage.h" />
+    <ClInclude Include="Unready.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

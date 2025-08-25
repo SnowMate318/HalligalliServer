@@ -1,8 +1,9 @@
 #include "FrontCardsImpl.h"
 #include "Exception.h"
-FrontCardsImpl::FrontCardsImpl(int playerCount)
+
+FrontCardsImpl::FrontCardsImpl()
 {
-	cards = std::vector<ICard*>(playerCount, nullptr);
+	cards = std::unordered_map<int, ICard*>();
 	fruitCounts[Fruit::APPLE] = 0;
 	fruitCounts[Fruit::BANANA] = 0;
 	fruitCounts[Fruit::GRAPE] = 0;
@@ -16,9 +17,6 @@ FrontCardsImpl::~FrontCardsImpl()
 void 
 FrontCardsImpl::updateCard(int playerId, ICard* card)
 {
-	if (playerId >= cards.size() || playerId < 0) {
-		throw Exception("잘못된 인덱스 오류");
-	}
 
 	this->cards[playerId] = card;
 	this->fruitCounts[card->getFruit()] += card->getFruitCnt();
@@ -27,10 +25,6 @@ FrontCardsImpl::updateCard(int playerId, ICard* card)
 void 
 FrontCardsImpl::resetCard(int playerId)
 {
-
-	if (playerId >= cards.size() || playerId < 0) {
-		throw Exception("잘못된 인덱스 오류");
-	}
 
 	this->fruitCounts[this->cards[playerId]->getFruit()] -= this->cards[playerId]->getFruitCnt();
 	this->cards[playerId] = nullptr;
@@ -45,4 +39,9 @@ FrontCardsImpl::checkFiveFruit()
 	if (fruitCounts[Fruit::WATERMELON] == 5) return true;
 
 	return false;
+}
+
+ICard* FrontCardsImpl::getFrontCardById(int playerId)
+{
+	return nullptr;
 }

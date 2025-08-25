@@ -8,7 +8,7 @@ private:
 	int playerCount;
 	int targetPlayer;
 	int nextTurnPlayer;
-	GameStatus gameStatus;
+	Action gameStatus;
 
 public:
 
@@ -21,7 +21,7 @@ public:
 	virtual void updatePenalty(int playerId)override;
 	virtual void updateNextTurn()override;
 
-	virtual GameStatus getGameStatus()override;
+	virtual Action getGameStatus()override;
 	virtual int getTargetPlayer()override;
 	virtual int getNextTurnPlayer()override;
 	virtual void setNextTurnPlayer(int playerId)override;

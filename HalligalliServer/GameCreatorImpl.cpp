@@ -1,26 +1,16 @@
 #include "GameCreatorImpl.h"
-#include "BellImpl.h"
-#include "FrontCardsImpl.h"
-#include "TableDeckImpl.h"
-#include "GameStatusManagerImpl.h"
-#include "GameManagerImpl.h"
-#include "GamePlayerImpl.h"
-#include "PlayerDeckImpl.h"
+
 
 
 GameCreatorImpl::GameCreatorImpl(IRoom* room)
 {
+	this->game = nullptr;
 	this->room = room;
+	this->bell = nullptr;
+	this->frontCards = nullptr;
+	this->gameStatusManager = nullptr;
+	this->tableDeck = nullptr;
 
-	//IPlayerDeck* playerDeck;
-
-	//int idx = 0;
-	//for (Player* player : players) {
-	//	playerDeck = new PlayerDeckImpl();
-	//	gameRole = createGameRole(player, playerDeck, idx++);
-	//	player->setRole(gameRole);
-	//	playerDecks.push_back(playerDeck);
-	//}
 }
 
 GameCreatorImpl::~GameCreatorImpl()
@@ -29,19 +19,19 @@ GameCreatorImpl::~GameCreatorImpl()
 	delete frontCards;
 	delete gameStatusManager;
 	delete tableDeck;
-	delete gameManager;
+	delete game;
 }
 
-IGameManager* 
+IGame* 
 GameCreatorImpl::createGame()
 {
 	bell = new BellImpl();
-	frontCards = new FrontCardsImpl(this->players.size());
+	frontCards = new FrontCardsImpl();
 	gameStatusManager = new GameStatusManagerImpl(this->players.size());
 	tableDeck = new TableDeckImpl();
 
 
-	this->gameManager = new GameManagerImpl(
+	this->game = new GameImpl(
 		
 		this->players.size(),
 		this->bell,
@@ -50,5 +40,7 @@ GameCreatorImpl::createGame()
 		this->gameStatusManager
 	);
 
-	return this->gameManager;
+
+
+	return this->game;
 }

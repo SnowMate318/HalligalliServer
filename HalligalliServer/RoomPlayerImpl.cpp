@@ -15,11 +15,10 @@ bool RoomPlayerImpl::getReady()
 	return isReady;
 }
 
-void RoomPlayerImpl::startGame(int roomId, int roomPlayerIndex)
+void RoomPlayerImpl::startGame(int roomId, int roomPlayerIndex, IGame* game)
 {
 
-	std::pair<int,int> roomInfo = std::make_pair(roomId, roomPlayerIndex);
-	playerManager->gameStart(roomInfo);
+	playerManager->createGamePlayer(roomId, roomPlayerIndex , game);
 }
 
 void RoomPlayerImpl::exitRoom()

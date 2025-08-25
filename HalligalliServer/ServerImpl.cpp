@@ -117,7 +117,7 @@ void ServerImpl::serverStart() {
         }
 
         // 클라이언트마다 새 스레드 생성 (필요시 쓰레드풀로 교체 가능)
-        std::thread t(&ServerImpl::clientWorker, clientSock, clientAddr); // 여기서 관련함수
+        std::thread t(&ServerImpl::clientWorker, this, clientSock, clientAddr);
         t.detach();
     }
 
@@ -137,7 +137,7 @@ void ServerImpl::clientWorker(SOCKET clientSock, sockaddr_storage addr) {
     // 1) 소켓 생성 시 관련 클래스 객체 생성
     //Todo    
     int id = counter++;
-    ISocket* socket = new TcpSocket(counter,clientSock, addr);
+    ISocket* socket = new TcpSocket(id,clientSock, addr);
 
     std::string line;
     // 접속자 로그
@@ -147,19 +147,23 @@ void ServerImpl::clientWorker(SOCKET clientSock, sockaddr_storage addr) {
 
         // 소켓 delete 후 함수종료
         delete socket;
+        responseNack(clientSock, "NOT_GIVEN_NAME");
+        closesocket(clientSock);
+        return;
 
     }
-
     // 2) JSON 파싱 및 검증
     std::string username;
     if (!parsingAndVerify(clientSock, line, username)) {
 
         // 소켓 delete 후 함수종료
         delete socket;
+        responseNack(clientSock, username);
+        closesocket(clientSock);
+        return;
 
     }
     socket->setUsername(username); // 이름 넣기
-    
     std::cout << "[Client] 새로운 사용자 -> username: " << username << "\n";
 
     // 3) ACK 응답(JSON)
@@ -168,16 +172,15 @@ void ServerImpl::clientWorker(SOCKET clientSock, sockaddr_storage addr) {
     // 소켓에 아이디 부여해서 저장
     sockets[id] = socket;
 
-
     // 5) 로직 실행(while 루프) 
     socket->startListening();
-     
     
     // 5) 소켓 종료, 딜리트
     sockets.erase(id);
     delete socket;
     closesocket(clientSock);
 }
+
 void ServerImpl::logging(sockaddr_storage addr) {
     char host[NI_MAXHOST]{}, serv[NI_MAXSERV]{};
     if (getnameinfo((sockaddr*)&addr, sizeof(addr), host, sizeof(host), serv, sizeof(serv),
@@ -205,7 +208,7 @@ bool ServerImpl::parsingAndVerify(SOCKET clientSock, std::string& line, std::str
         json j = json::parse(line);
         if (!j.contains("username") || !j["username"].is_string()) {
             json err = {
-                {"ok", false},
+                {"response", "ERROR"},
                 {"error", "잘못된 형식입니다. 요구 형식: {username:string}"}
             };
             auto s = err.dump() + "\n";
@@ -216,7 +219,7 @@ bool ServerImpl::parsingAndVerify(SOCKET clientSock, std::string& line, std::str
         username = j["username"].get<std::string>();
     }
     catch (const std::exception& e) {
-        json err = { {"ok", false}, {"error", std::string("json 파싱 에러: ") + e.what()} };
+        json err = { {"response", "ERROR"}, {"error", std::string("json 파싱 에러: ") + e.what()}};
         auto s = err.dump() + "\n";
         send(clientSock, s.c_str(), (int)s.size(), 0);
         closesocket(clientSock);
@@ -229,8 +232,21 @@ void ServerImpl::responseAck(SOCKET clientSock, std::string username)
 {
     {
         json ack = {
-            {"ok", true},
+            {"response", "OK"},
             {"msg", "USERINFO RECEIVED"},
+            {"name", username}
+        };
+        auto s = ack.dump() + "\n";
+        send(clientSock, s.c_str(), (int)s.size(), 0);
+    }
+}
+
+void ServerImpl::responseNack(SOCKET clientSock, std::string username)
+{
+    {
+        json ack = {
+            {"response", "ERROR"},
+            {"msg", "USERINFO NOT RECEIVED TRY AGAIN"},
             {"name", username}
         };
         auto s = ack.dump() + "\n";

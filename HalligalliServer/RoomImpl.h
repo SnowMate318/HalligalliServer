@@ -1,7 +1,6 @@
 #pragma once
 #include "IRoom.h"
 #include "IGameCreator.h"
-#include "ILobby.h"
 #include <vector>
 #include <string>
 class RoomImpl : public IRoom {
@@ -14,14 +13,13 @@ private:
 	
 	std::vector<IRoomPlayer*> players;
 	IGameCreator* gameCreator;
-	ILobby* lobby;
 
 public:
 
 	RoomImpl(int roomId, std::string roomName);
 	~RoomImpl();
 
-	virtual bool addPlayer(IRoomPlayer* player)override;
+	virtual int addPlayer(IRoomPlayer* player)override;
 	virtual void removePlayer(int playerId)override;
 
 	virtual bool checkAllPlayersReady()override;

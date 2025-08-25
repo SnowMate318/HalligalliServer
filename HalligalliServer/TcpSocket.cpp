@@ -28,7 +28,7 @@ void TcpSocket::startListening()
             std::cerr << "[Client] 수신 에러: " << WSAGetLastError() << "\n";
             break;
         }
-        commandExecute(buf);
+        executeCommand(buf);
     }
 }
 void TcpSocket::send(ResponseMessage* message)
@@ -37,21 +37,67 @@ void TcpSocket::send(ResponseMessage* message)
 
 }
 
-json TcpSocket::parsing(char bytes[])
-{
-    return json();
-}
-
-RequestMessage* TcpSocket::jsonToMessage(json message)
-{
-    return nullptr;
-}
-
 json TcpSocket::messageToJson(Message* message)
 {
     return json();
 }
-void TcpSocket::commandExecute(char bytes[])
+
+Request* TcpSocket::getRequest(char bytes[])
 {
     json j = json::parse(bytes);
+    Action action = j["action"];
+    Request* request = nullptr;
+
+    switch (action) {
+
+    case CREATE_ROOM:
+        request = new CreateRoom(socketId, j["room_title"]);
+        break;
+    case FIND_ROOM:
+        request = new FindRoom(socketId, j["page"]);
+        break;
+    case JOIN_ROOM:
+        request = new JoinRoom(socketId, j["room_id"]);
+        break;
+    case EXIT_ROOM:
+        request = new ExitRoom(socketId, j["room_id"], j["room_player_id"]);
+        break;
+    case READY:
+        request = new Ready(socketId, j["room_id"], j["room_player_id"]);
+        break;
+    case UNREADY:
+        request = new Unready(socketId, j["room_id"], j["room_player_id"]);
+        break;
+    case GAME_STARTED:
+        request = new GameStart(socketId, j["room_id"]);
+        break;
+    case CARD_REVEALED:
+        request = new CardRevealed(socketId, j["room_id"], j["room_player_id"]);
+        break;
+    case PRESS_BELL:
+        request = new PressBell(socketId, j["room_id"], j["room_player_id"], j["press_time_diff"]);
+        break;
+    case PENALTY_GIVEN:
+        request = new PenaltyGiven(socketId, j["room_id"], j["room_player_id"]);
+        break;
+
+        // 제외:PLAYER_EXIT_IN_GAME, NULL_ACTION, GAME_WIN, BELL_WIN
+    }
+
+    return request;
+}
+
+void TcpSocket::executeCommand(char bytes[])
+{
+    Request* request = getRequest(bytes);
+    if (request == nullptr) {
+
+        //Todo: 오류메세지 반환
+
+
+    }
+    request->execute();
+
+    delete request;
+   
 }

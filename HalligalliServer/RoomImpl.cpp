@@ -17,16 +17,16 @@ RoomImpl::~RoomImpl()
 {
 }
 
-bool 
+int 
 RoomImpl::addPlayer(IRoomPlayer* player)
 {
-	if (playerCount >= MAX_PLAYER) return false;
+	if (players.size() >= MAX_PLAYER) return false;
 
 	players.push_back(player);
-	player->setRoomInfo(roomId, playerCount++);
+	player->setRoomInfo(roomId, playerCount);
 	
 
-	return true;
+	return playerCount++;
 }
 
 void 
@@ -51,11 +51,12 @@ RoomImpl::gameStart()
 {
 	this->gameStarted = true;
 	// gamePlayer ¸¸µé±â
-	for (int i = 0; i < players.size(); i++) {
-		players[i]->startGame(roomId, i);
-	}
 	
-	this->gameCreator->createGame();
+	IGame* game = this->gameCreator->createGame();
+
+	for (int i = 0; i < players.size(); i++) {
+		players[i]->startGame(roomId, i, game);
+	}
 }
 
 int 

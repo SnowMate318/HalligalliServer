@@ -1,34 +1,34 @@
 #pragma once
 #include "IPlayerManager.h"
-#include <utility>
-#include <string>
+#include "GamePlayerImpl.h"
+#include "RoomPlayerImpl.h"
+#include "SocketPlayerManager.h"
 #include "Role.h"
+
+#include <string>
 
 class PlayerManagerImpl : public IPlayerManager {
 private:
-	int playerId;
+	int socketId;
 	std::string playerName;
 
-	ISocketManager* socketManager;
-
 	IGamePlayer* gamePlayer;
-	ILobbyPlayer* lobbyPlayer;
 	IRoomPlayer* roomPlayer;
 
 public:
 
-	PlayerManagerImpl(int playerId, std::string playerName, ISocketManager* socketManager);
+	PlayerManagerImpl(int socketId, std::string playerName);
 		
 	~PlayerManagerImpl();
 
 	virtual IGamePlayer* getGamePlayer()override;
-	virtual ILobbyPlayer* getLobbyPlayer()override;
 	virtual IRoomPlayer* getRoomPlayer()override;
 
-	virtual int getPlayerId()override;
+	virtual int getSocketId()override;
+	virtual std::string getPlayerName()override;
 
 	virtual void sendMessageToUser(Message* message)override;
-	virtual void executeCommand(RequestMessage* message)override;
 	virtual void resetPlayerInfo(Role role)override;
-	virtual void gameStart(std::pair<int, int> roomInfo)override;
+	virtual void createGamePlayer(int roomId, int roomPlayerIndex, IGame* game)override;
+	virtual void createRoomPlayer(IRoom* room)override;
 };

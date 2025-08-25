@@ -5,6 +5,9 @@ class GamePlayerImpl : public IGamePlayer {
 
 private:
 	IPlayerManager* playerManager;
+	IPlayerDeck* playerDeck;
+	IGame* game;
+
 	int roomId;
 	int roomPlayerIndex;
 	bool alive;
@@ -12,17 +15,28 @@ private:
 
 public:
 
-	GamePlayerImpl(IPlayerManager* playerManager, std::pair<int, int> roomInfo)
-		: playerManager(playerManager), roomId(roomId), roomPlayerIndex(roomPlayerIndex) {
+	GamePlayerImpl(IPlayerManager* playerManager, IGame* game, int roomId, int roomPlayerIndex)
+		: playerManager(playerManager), game(game), roomId(roomId), roomPlayerIndex(roomPlayerIndex) {
+		playerDeck = new PlayerDeckImpl();
 		alive = true;
-	};
-	~GamePlayerImpl() {}
+	}
 
-	virtual bool playTurn()override;
-	virtual void ringBell(int press_time_diff)override;
-	virtual void penalty()override;
+	~GamePlayerImpl() {
+	
+		delete playerDeck;
+	}
 
-	virtual void die()override;
-	virtual bool isAlive()override;
+	//virtual void setGame(IGame* game) override;
+
+	virtual void playTurn() override;
+	virtual void ringBell(int pressTimeDiff) override;
+	virtual void penalty() override;
+	virtual void die() override;
+
+	virtual bool isAlive() override;
+	virtual int getPlayerId() override;
+	virtual std::string getPlayerName() override;
+
+	virtual IPlayerDeck* getDeck() override;
 
 };

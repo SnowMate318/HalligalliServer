@@ -19,6 +19,7 @@ public:
     ServerImpl(const std::string& host = "0.0.0.0", const std::string& port = "5000");
     ~ServerImpl();
 
+
     virtual void serverStart()override; // 블로킹: accept 루프
     virtual void serverStop()override;  // 안전 종료 요청
 
@@ -41,6 +42,7 @@ private:
     bool receive(SOCKET clientSock, std::string& line);
     bool parsingAndVerify(SOCKET clientSock, std::string& line, std::string& username);
     void responseAck(SOCKET clientSock, std::string username);
+    void responseNack(SOCKET clientSock, std::string username);
 
     void clientWorker(SOCKET clientSock, sockaddr_storage addr);
 };

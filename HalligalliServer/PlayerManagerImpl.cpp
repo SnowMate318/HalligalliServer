@@ -1,21 +1,14 @@
 #include "PlayerManagerImpl.h"
-#include "GamePlayerImpl.h"
-#include "LobbyPlayerImpl.h"
-#include "RoomPlayerImpl.h"
-#include "JoinRoomMessage.h"
-#include "CreateRoomMessage.h"
-#include "ISocketManager.h"
-#include "Role.h"
+
 class Message;
 class IGamePlayer;
 class ILobbyPlayer;
 class IRoomPlayer;
-class RequestMessage;   // ← 전방 선언
+class Request;   // ← 전방 선언
 
-PlayerManagerImpl::PlayerManagerImpl(int playerId, std::string playerName, ISocketManager* socketManager)
-	: playerId(playerId), playerName(playerName), socketManager(socketManager)
+PlayerManagerImpl::PlayerManagerImpl(int socketId, std::string playerName)
+	: socketId(socketId), playerName(playerName)
 {
-	lobbyPlayer = new LobbyPlayerImpl(this, playerId);
 	gamePlayer = nullptr;
 	roomPlayer = nullptr;
 }
@@ -24,7 +17,6 @@ PlayerManagerImpl::PlayerManagerImpl(int playerId, std::string playerName, ISock
 PlayerManagerImpl::~PlayerManagerImpl()
 {
 	delete gamePlayer;
-	delete lobbyPlayer;
 	delete roomPlayer;
 }
 
@@ -33,32 +25,26 @@ IGamePlayer* PlayerManagerImpl::getGamePlayer()
 	return gamePlayer;
 }
 
-ILobbyPlayer* PlayerManagerImpl::getLobbyPlayer()
-{
-	return lobbyPlayer;
-}
-
 IRoomPlayer* PlayerManagerImpl::getRoomPlayer()
 {
 	return roomPlayer;
 }
 
-int PlayerManagerImpl::getPlayerId()
+int PlayerManagerImpl::getSocketId()
 {
-	return playerId;
+	return socketId;
+}
+
+std::string PlayerManagerImpl::getPlayerName()
+{
+	return playerName;
 }
 
 void PlayerManagerImpl::sendMessageToUser(Message* message)
 {
-	socketManager->sendMessage(playerId, message);
+	//socketManager->sendMessage(playerId, message);
 }
 
-void PlayerManagerImpl::executeCommand(RequestMessage* message)
-{
-
-	message->messageExecute(this);
-	
-}
 
 void PlayerManagerImpl::resetPlayerInfo(Role role)
 {
@@ -67,21 +53,22 @@ void PlayerManagerImpl::resetPlayerInfo(Role role)
 		delete gamePlayer;
 		gamePlayer = nullptr;
 		break;
-	case Role::LOBBY:
-		delete lobbyPlayer;
-		lobbyPlayer = new LobbyPlayerImpl(this, playerId);
-		break;
 	case Role::ROOM:
 		delete roomPlayer;
-		roomPlayer = new RoomPlayerImpl(this);
+		roomPlayer = nullptr;
 		break;
 	}
 }
 
-void PlayerManagerImpl::gameStart(std::pair<int, int> roomInfo)
+void PlayerManagerImpl::createGamePlayer(int roomId, int roomPlayerIndex, IGame* game)
 {
 	if (gamePlayer != nullptr) {
 		resetPlayerInfo(Role::GAME);
 	}
-	this->gamePlayer = new GamePlayerImpl(this, roomInfo);
+	this->gamePlayer = new GamePlayerImpl(this, game, roomId, roomPlayerIndex);
+}
+
+void PlayerManagerImpl::createRoomPlayer(IRoom* room)
+{
+	this->roomPlayer = new RoomPlayerImpl(this, room);
 }

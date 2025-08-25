@@ -1,29 +1,39 @@
 #pragma once
 #include "ISocket.h"
-#include "RequestMessage.h"
+#include "Request.h"
 #include <winsock2.h>
 #include <string>
 #include <iostream>
 #include <json.hpp>
 
+#include "CardRevealed.h"
+#include "CreateRoom.h"
+#include "ExitRoom.h"
+#include "FindRoom.h"
+#include "GameStart.h"
+#include "JoinRoom.h"
+#include "PenaltyGiven.h"
+#include "PlayerEnter.h"
+#include "PlayerExit.h"
+#include "PressBell.h"
+#include "Ready.h"
+#include "Unready.h"
+
 using nlohmann::json;
 
 class TcpSocket : public ISocket {
-	int id;
+	int socketId;
 	std::string username;
 	SOCKET clientSock;
 	sockaddr_storage addr;
 
-	json parsing(char bytes[]);
-	RequestMessage* jsonToMessage(json message);
 	json messageToJson(Message* message);
-
-
-	void commandExecute(char bytes[]);
+	Request* getRequest(char bytes[]);
+	void executeCommand(char bytes[]);
 
 public:
 
-	TcpSocket(int id, SOCKET clientSock, sockaddr_storage addr) : id(id), clientSock(clientSock), addr(addr) {}
+	TcpSocket(int socketId, SOCKET clientSock, sockaddr_storage addr) : socketId(socketId), clientSock(clientSock), addr(addr) {}
 	~TcpSocket();
 
 	virtual void setUsername(std::string username)override;

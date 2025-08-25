@@ -6,12 +6,13 @@
 class FrontCardsImpl : public IFrontCards {
 
 private:
-	std::vector<ICard*> cards;
+	std::unordered_map<int,ICard*> cards;
 	std::unordered_map<Fruit, int> fruitCounts;
 public:
-	FrontCardsImpl(int playerCount);
+	FrontCardsImpl();
 	~FrontCardsImpl();
 	virtual void updateCard(int playerId, ICard* card) override;
 	virtual void resetCard(int playerId)override;
 	virtual bool checkFiveFruit()override;
+	virtual ICard* getFrontCardById(int playerId)override;
 };

@@ -1,5 +1,15 @@
 #include "ResponseMessage.h"
 
+void ResponseMessage::setAction(Action action)
+{
+    this->action = action;
+}
+
+void ResponseMessage::setResponseStatus(ResponseStatus status)
+{
+    this->responseStatus = status;
+}
+
 json ResponseMessage::toJson()
 {
 

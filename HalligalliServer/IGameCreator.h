@@ -1,11 +1,10 @@
 #pragma once
-#include "IGameManager.h"
-
+#include "IGame.h"
 class IGameCreator {
 
 
 
 public:
-	virtual IGameManager* createGame() = 0;
+	virtual IGame* createGame() = 0;
 
 };

@@ -1,11 +1,16 @@
 #pragma once
 #include "IgameCreator.h"
-#include <vector>
+#include "BellImpl.h"
+#include "FrontCardsImpl.h"
+#include "TableDeckImpl.h"
+#include "GameStatusManagerImpl.h"
+#include "GameImpl.h"
+#include "GamePlayerImpl.h"
+#include "PlayerDeckImpl.h"
+#include "RoomImpl.h"
 
-class IRoom;
-class IBell;
-class IGameStatusManager;
-class IGameManager;
+
+#include <vector>
 
 
 class GameCreatorImpl : public IGameCreator {
@@ -20,7 +25,7 @@ private :
 	ITableDeck* tableDeck;
 	std::vector<IGamePlayer*> players;
 
-	IGameManager* gameManager;
+	IGame* game;
 
 
 public:
@@ -28,7 +33,6 @@ public:
 	GameCreatorImpl(IRoom* room);
 	~GameCreatorImpl();
 
-	virtual IGameManager* createGame()override;
-
+	virtual IGame* createGame()override;
 
 };

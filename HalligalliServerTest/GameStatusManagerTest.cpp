@@ -10,14 +10,14 @@ protected:
 
 TEST_F(GameStatusManagerTest, 초기화_테스트) {
 
-    EXPECT_EQ(gameStatusManager.getGameStatus(),GameStatus::NEXT_TURN);
+    EXPECT_EQ(gameStatusManager.getGameStatus(),Action::NEXT_TURN);
     EXPECT_EQ(gameStatusManager.getTargetPlayer(),-1);
     EXPECT_EQ(gameStatusManager.getNextTurnPlayer(),0);
 }
 
 TEST_F(GameStatusManagerTest, 메소드_실행_테스트) {
     gameStatusManager.updateNextTurn();
-    EXPECT_EQ(gameStatusManager.getGameStatus(), GameStatus::NEXT_TURN);
+    EXPECT_EQ(gameStatusManager.getGameStatus(), Action::NEXT_TURN);
     EXPECT_EQ(gameStatusManager.getTargetPlayer(),-1);
     EXPECT_EQ(gameStatusManager.getNextTurnPlayer(),1);
 
@@ -33,25 +33,25 @@ TEST_F(GameStatusManagerTest, 메소드_실행_테스트) {
 
 TEST_F(GameStatusManagerTest, 벨_활성화_함수_테스트) {
     gameStatusManager.updateBellActivate();
-    EXPECT_EQ(gameStatusManager.getGameStatus(),GameStatus::BELL_ACTIVATE);
+    EXPECT_EQ(gameStatusManager.getGameStatus(), Action::BELL_ACTIVATE);
     EXPECT_EQ(gameStatusManager.getTargetPlayer(),-1);
     EXPECT_EQ(gameStatusManager.getNextTurnPlayer(),1);
 }
 TEST_F(GameStatusManagerTest, 벨_승리자_함수_테스트) {
     gameStatusManager.updateBellWin(1);
-    EXPECT_EQ(gameStatusManager.getGameStatus(),GameStatus::BELL_WIN);
+    EXPECT_EQ(gameStatusManager.getGameStatus(), Action::BELL_WIN);
     EXPECT_EQ(gameStatusManager.getTargetPlayer(),1);
     EXPECT_EQ(gameStatusManager.getNextTurnPlayer(),1);
 }
 TEST_F(GameStatusManagerTest, 플레이어_사망_함수_테스트) {
     gameStatusManager.updatePlayerDie(1);
-    EXPECT_EQ(gameStatusManager.getGameStatus(),GameStatus::PLAYER_DIE);
+    EXPECT_EQ(gameStatusManager.getGameStatus(), Action::PLAYER_DIE);
     EXPECT_EQ(gameStatusManager.getTargetPlayer(),1);
     EXPECT_EQ(gameStatusManager.getNextTurnPlayer(),1);
 }
 TEST_F(GameStatusManagerTest, 패널티_적용_함수_테스트) {
     gameStatusManager.updatePenalty(1);
-    EXPECT_EQ(gameStatusManager.getGameStatus(),GameStatus::PENALTY);
+    EXPECT_EQ(gameStatusManager.getGameStatus(), Action::PENALTY);
     EXPECT_EQ(gameStatusManager.getTargetPlayer(),1);
     EXPECT_EQ(gameStatusManager.getNextTurnPlayer(),1);
 }

@@ -6,7 +6,7 @@ GameStatusManagerImpl::GameStatusManagerImpl(int playerCount)
 	this->playerCount = playerCount;
 	nextTurnPlayer = 0;
 	targetPlayer = -1;
-	gameStatus = GameStatus::NEXT_TURN;
+	gameStatus = Action::NEXT_TURN;
 }
 
 GameStatusManagerImpl::~GameStatusManagerImpl()
@@ -16,14 +16,14 @@ GameStatusManagerImpl::~GameStatusManagerImpl()
 void
 GameStatusManagerImpl::updatePlayerDie(int playerId)
 {
-	gameStatus = GameStatus::PLAYER_DIE;
+	gameStatus = Action::PLAYER_DIE;
 	targetPlayer = playerId;
 }
 
 void
 GameStatusManagerImpl::updateBellActivate()
 {
-	gameStatus = GameStatus::BELL_ACTIVATE;
+	gameStatus = Action::BELL_ACTIVATE;
 	targetPlayer = -1;
 }
 
@@ -34,7 +34,7 @@ GameStatusManagerImpl::updateBellWin(int playerId)
 		throw Exception("잘못된 인덱스 오류");
 	}
 
-	gameStatus = GameStatus::BELL_WIN;
+	gameStatus = Action::BELL_WIN;
 	targetPlayer = playerId;
 }
 
@@ -45,18 +45,18 @@ GameStatusManagerImpl::updatePenalty(int playerId)
 		throw Exception("잘못된 인덱스 오류");
 	}
 
-	gameStatus = GameStatus::PENALTY;
+	gameStatus = Action::PENALTY;
 	targetPlayer = playerId;
 }
 
 void
 GameStatusManagerImpl::updateNextTurn()
 {
-	gameStatus = GameStatus::NEXT_TURN;
+	gameStatus = Action::NEXT_TURN;
 	targetPlayer = -1;
 }
 
-GameStatus
+Action
 GameStatusManagerImpl::getGameStatus()
 {
 	return this->gameStatus;

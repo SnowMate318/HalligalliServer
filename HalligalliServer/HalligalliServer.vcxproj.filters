@@ -52,12 +52,6 @@
     <Filter Include="소스 파일\GameStatusManager">
       <UniqueIdentifier>{c9697025-ee1f-44a0-9144-6c3d0bfaad3c}</UniqueIdentifier>
     </Filter>
-    <Filter Include="헤더 파일\GameManager">
-      <UniqueIdentifier>{5550fe8f-39a5-4aba-aae4-391909197b09}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="소스 파일\GameManager">
-      <UniqueIdentifier>{885d7111-c682-499d-85f7-290ac389c516}</UniqueIdentifier>
-    </Filter>
     <Filter Include="소스 파일\Messages">
       <UniqueIdentifier>{96689ca0-a95a-498e-9bbe-037461cc7527}</UniqueIdentifier>
     </Filter>
@@ -82,9 +76,6 @@
     <Filter Include="소스 파일\GameCreator">
       <UniqueIdentifier>{da62d5dc-853e-46dd-b546-8b68a1d95e7d}</UniqueIdentifier>
     </Filter>
-    <Filter Include="헤더 파일\SocketManager">
-      <UniqueIdentifier>{c2cc9e60-ce1d-4bee-81c9-043e40fddb6a}</UniqueIdentifier>
-    </Filter>
     <Filter Include="헤더 파일\PlayerManager">
       <UniqueIdentifier>{175b98c1-d1ff-4d7f-ac16-f236b2a1f0e9}</UniqueIdentifier>
     </Filter>
@@ -97,18 +88,6 @@
     <Filter Include="헤더 파일\Player">
       <UniqueIdentifier>{55fc4943-d75b-42b1-b46c-68a38846d79d}</UniqueIdentifier>
     </Filter>
-    <Filter Include="소스 파일\SocketManager">
-      <UniqueIdentifier>{28548dd8-d63a-4070-8452-bd7d6efa58b2}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="헤더 파일\RequestMessage">
-      <UniqueIdentifier>{34253acd-8ca8-43c7-a8d2-af82666414e5}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="헤더 파일\GameMessages">
-      <UniqueIdentifier>{cb66534e-016f-44d8-befa-1e9ff256f6c0}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="소스 파일\RequestMessage">
-      <UniqueIdentifier>{53430ef3-0304-465a-b8f4-2213ba017379}</UniqueIdentifier>
-    </Filter>
     <Filter Include="소스 파일\PlayerManager">
       <UniqueIdentifier>{fe0dcc54-89ea-4694-8392-7c54fedfafb1}</UniqueIdentifier>
     </Filter>
@@ -120,6 +99,27 @@
     </Filter>
     <Filter Include="헤더 파일\ResponseMessage">
       <UniqueIdentifier>{b27518b9-a636-4375-a369-17470866d23d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\Request">
+      <UniqueIdentifier>{34253acd-8ca8-43c7-a8d2-af82666414e5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\SocketPlayerManager">
+      <UniqueIdentifier>{c2cc9e60-ce1d-4bee-81c9-043e40fddb6a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Lobby">
+      <UniqueIdentifier>{cd17377b-273f-482f-bc62-a6f894cbb7a0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\SocketPlayerManger">
+      <UniqueIdentifier>{28548dd8-d63a-4070-8452-bd7d6efa58b2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Request">
+      <UniqueIdentifier>{53430ef3-0304-465a-b8f4-2213ba017379}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\Game">
+      <UniqueIdentifier>{5550fe8f-39a5-4aba-aae4-391909197b09}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Game">
+      <UniqueIdentifier>{885d7111-c682-499d-85f7-290ac389c516}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -150,8 +150,8 @@
     <ClCompile Include="GameStatusManagerImpl.cpp">
       <Filter>소스 파일\GameStatusManager</Filter>
     </ClCompile>
-    <ClCompile Include="GameManagerImpl.cpp">
-      <Filter>소스 파일\GameManager</Filter>
+    <ClCompile Include="GameImpl.cpp">
+      <Filter>소스 파일\Game</Filter>
     </ClCompile>
     <ClCompile Include="ServerImpl.cpp">
       <Filter>소스 파일\Server</Filter>
@@ -168,56 +168,59 @@
     <ClCompile Include="RoomImpl.cpp">
       <Filter>소스 파일\Room</Filter>
     </ClCompile>
-    <ClCompile Include="SocketManagerImpl.cpp">
-      <Filter>소스 파일\SocketManager</Filter>
+    <ClCompile Include="SocketPlayerManager.cpp">
+      <Filter>소스 파일\SocketPlayerManger</Filter>
     </ClCompile>
     <ClCompile Include="PlayerManagerImpl.cpp">
       <Filter>소스 파일\PlayerManager</Filter>
     </ClCompile>
-    <ClCompile Include="ReadyMessage.cpp">
-      <Filter>소스 파일\RequestMessage</Filter>
+    <ClCompile Include="Ready.cpp">
+      <Filter>소스 파일\Request</Filter>
     </ClCompile>
-    <ClCompile Include="UnreadyMessage.cpp">
-      <Filter>소스 파일\RequestMessage</Filter>
+    <ClCompile Include="Unready.cpp">
+      <Filter>소스 파일\Request</Filter>
     </ClCompile>
-    <ClCompile Include="ExitRoomMessage.cpp">
-      <Filter>소스 파일\RequestMessage</Filter>
+    <ClCompile Include="ExitRoom.cpp">
+      <Filter>소스 파일\Request</Filter>
     </ClCompile>
-    <ClCompile Include="FindRoomMessage.cpp">
-      <Filter>소스 파일\RequestMessage</Filter>
+    <ClCompile Include="FindRoom.cpp">
+      <Filter>소스 파일\Request</Filter>
     </ClCompile>
-    <ClCompile Include="CardRevealedMessage.cpp">
-      <Filter>소스 파일\RequestMessage</Filter>
+    <ClCompile Include="CardRevealed.cpp">
+      <Filter>소스 파일\Request</Filter>
     </ClCompile>
-    <ClCompile Include="GameStartMessage.cpp">
-      <Filter>소스 파일\RequestMessage</Filter>
+    <ClCompile Include="GameStart.cpp">
+      <Filter>소스 파일\Request</Filter>
     </ClCompile>
-    <ClCompile Include="JoinRoomMessage.cpp">
-      <Filter>소스 파일\RequestMessage</Filter>
+    <ClCompile Include="JoinRoom.cpp">
+      <Filter>소스 파일\Request</Filter>
     </ClCompile>
-    <ClCompile Include="PenaltyGivenMessage.cpp">
-      <Filter>소스 파일\RequestMessage</Filter>
+    <ClCompile Include="PenaltyGiven.cpp">
+      <Filter>소스 파일\Request</Filter>
     </ClCompile>
-    <ClCompile Include="PressBellMessage.cpp">
-      <Filter>소스 파일\RequestMessage</Filter>
+    <ClCompile Include="PressBell.cpp">
+      <Filter>소스 파일\Request</Filter>
     </ClCompile>
-    <ClCompile Include="CreateRoomMessage.cpp">
-      <Filter>소스 파일\RequestMessage</Filter>
+    <ClCompile Include="CreateRoom.cpp">
+      <Filter>소스 파일\Request</Filter>
     </ClCompile>
     <ClCompile Include="RoomPlayerImpl.cpp">
       <Filter>소스 파일\Player</Filter>
     </ClCompile>
-    <ClCompile Include="LobbyImpl.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
     <ClCompile Include="GamePlayerImpl.cpp">
       <Filter>소스 파일\Player</Filter>
     </ClCompile>
-    <ClCompile Include="LobbyPlayerImpl.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
     <ClCompile Include="GameMessage.h">
       <Filter>헤더 파일\ResponseMessage</Filter>
+    </ClCompile>
+    <ClCompile Include="Lobby.cpp">
+      <Filter>소스 파일\Lobby</Filter>
+    </ClCompile>
+    <ClCompile Include="RoomInfoMessage.cpp">
+      <Filter>소스 파일\Messages</Filter>
+    </ClCompile>
+    <ClCompile Include="GameMessage.cpp">
+      <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -272,14 +275,11 @@
     <ClInclude Include="GameStatusManagerImpl.h">
       <Filter>헤더 파일\GameStatusManager</Filter>
     </ClInclude>
-    <ClInclude Include="GameStatus.h">
-      <Filter>헤더 파일\GameStatusManager</Filter>
+    <ClInclude Include="IGame.h">
+      <Filter>헤더 파일\Game</Filter>
     </ClInclude>
-    <ClInclude Include="IGameManager.h">
-      <Filter>헤더 파일\GameManager</Filter>
-    </ClInclude>
-    <ClInclude Include="GameManagerImpl.h">
-      <Filter>헤더 파일\GameManager</Filter>
+    <ClInclude Include="GameImpl.h">
+      <Filter>헤더 파일\Game</Filter>
     </ClInclude>
     <ClInclude Include="IServer.h">
       <Filter>헤더 파일\Server</Filter>
@@ -311,11 +311,8 @@
     <ClInclude Include="Action.h">
       <Filter>헤더 파일\Message</Filter>
     </ClInclude>
-    <ClInclude Include="ISocketManager.h">
-      <Filter>헤더 파일\SocketManager</Filter>
-    </ClInclude>
-    <ClInclude Include="SocketManagerImpl.h">
-      <Filter>헤더 파일\SocketManager</Filter>
+    <ClInclude Include="SocketPlayerManager.h">
+      <Filter>헤더 파일\SocketPlayerManager</Filter>
     </ClInclude>
     <ClInclude Include="IPlayerManager.h">
       <Filter>헤더 파일\PlayerManager</Filter>
@@ -324,9 +321,6 @@
       <Filter>헤더 파일\Room</Filter>
     </ClInclude>
     <ClInclude Include="IGamePlayer.h">
-      <Filter>헤더 파일\Player</Filter>
-    </ClInclude>
-    <ClInclude Include="ILobbyPlayer.h">
       <Filter>헤더 파일\Player</Filter>
     </ClInclude>
     <ClInclude Include="RoomImpl.h">
@@ -341,38 +335,35 @@
     <ClInclude Include="ParsingException.h">
       <Filter>헤더 파일\Exceptions</Filter>
     </ClInclude>
-    <ClInclude Include="RequestMessage.h">
-      <Filter>헤더 파일\RequestMessage</Filter>
+    <ClInclude Include="Request.h">
+      <Filter>헤더 파일\Request</Filter>
     </ClInclude>
-    <ClInclude Include="LobbyMessage.h">
-      <Filter>헤더 파일\RequestMessage</Filter>
+    <ClInclude Include="CreateRoom.h">
+      <Filter>헤더 파일\Request</Filter>
     </ClInclude>
-    <ClInclude Include="CreateRoomMessage.h">
-      <Filter>헤더 파일\RequestMessage</Filter>
+    <ClInclude Include="FindRoom.h">
+      <Filter>헤더 파일\Request</Filter>
     </ClInclude>
-    <ClInclude Include="FindRoomMessage.h">
-      <Filter>헤더 파일\RequestMessage</Filter>
+    <ClInclude Include="JoinRoom.h">
+      <Filter>헤더 파일\Request</Filter>
     </ClInclude>
-    <ClInclude Include="JoinRoomMessage.h">
-      <Filter>헤더 파일\RequestMessage</Filter>
+    <ClInclude Include="ExitRoom.h">
+      <Filter>헤더 파일\Request</Filter>
     </ClInclude>
-    <ClInclude Include="ExitRoomMessage.h">
-      <Filter>헤더 파일\RequestMessage</Filter>
+    <ClInclude Include="Ready.h">
+      <Filter>헤더 파일\Request</Filter>
     </ClInclude>
-    <ClInclude Include="ReadyMessage.h">
-      <Filter>헤더 파일\RequestMessage</Filter>
+    <ClInclude Include="GameStart.h">
+      <Filter>헤더 파일\Request</Filter>
     </ClInclude>
-    <ClInclude Include="GameStartMessage.h">
-      <Filter>헤더 파일\RequestMessage</Filter>
+    <ClInclude Include="CardRevealed.h">
+      <Filter>헤더 파일\Request</Filter>
     </ClInclude>
-    <ClInclude Include="CardRevealedMessage.h">
-      <Filter>헤더 파일\RequestMessage</Filter>
+    <ClInclude Include="PressBell.h">
+      <Filter>헤더 파일\Request</Filter>
     </ClInclude>
-    <ClInclude Include="PressBellMessage.h">
-      <Filter>헤더 파일\RequestMessage</Filter>
-    </ClInclude>
-    <ClInclude Include="PenaltyGivenMessage.h">
-      <Filter>헤더 파일\RequestMessage</Filter>
+    <ClInclude Include="PenaltyGiven.h">
+      <Filter>헤더 파일\Request</Filter>
     </ClInclude>
     <ClInclude Include="PlayerManagerImpl.h">
       <Filter>헤더 파일\PlayerManager</Filter>
@@ -383,20 +374,23 @@
     <ClInclude Include="GamePlayerImpl.h">
       <Filter>헤더 파일\Player</Filter>
     </ClInclude>
-    <ClInclude Include="LobbyPlayerImpl.h">
-      <Filter>헤더 파일\Player</Filter>
-    </ClInclude>
     <ClInclude Include="RoomPlayerImpl.h">
       <Filter>헤더 파일\Player</Filter>
     </ClInclude>
-    <ClInclude Include="UnreadyMessage.h">
-      <Filter>헤더 파일\RequestMessage</Filter>
+    <ClInclude Include="Unready.h">
+      <Filter>헤더 파일\Request</Filter>
     </ClInclude>
-    <ClInclude Include="ILobby.h">
+    <ClInclude Include="Lobby.h">
       <Filter>헤더 파일\Lobby</Filter>
     </ClInclude>
-    <ClInclude Include="LobbyImpl.h">
-      <Filter>헤더 파일\Lobby</Filter>
+    <ClInclude Include="PlayerEnter.h">
+      <Filter>헤더 파일\Request</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerExit.h">
+      <Filter>헤더 파일\Request</Filter>
+    </ClInclude>
+    <ClInclude Include="RoomInfoMessage.h">
+      <Filter>헤더 파일\Message</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

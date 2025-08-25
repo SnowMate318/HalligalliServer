@@ -1,34 +1,34 @@
 #pragma once
 
 #include "Role.h"
-#include <utility>
+#include "IRoom.h"
 #include <string>
 
+class IGame;
 class Message;
 class IGamePlayer;
 class ILobbyPlayer;
 class IRoomPlayer;
-class RequestMessage;   // ← 전방 선언
+class Request;   // ← 전방 선언
 class ISocketManager;
 
 class IPlayerManager {
 private:
-	int playerId;
+	int socketId;
 	std::string playerName;
 
-	ISocketManager* socketManager;
 public:
 
 	virtual IGamePlayer* getGamePlayer() = 0;
-	virtual ILobbyPlayer* getLobbyPlayer() = 0;
 	virtual IRoomPlayer* getRoomPlayer() = 0; 
 
-	virtual int getPlayerId() = 0;
+	virtual int getSocketId() = 0;
+	virtual std::string getPlayerName() = 0;
 
 	virtual void sendMessageToUser(Message* message) = 0;
-	virtual void executeCommand(RequestMessage* message) = 0;
 	virtual void resetPlayerInfo(Role role) = 0;
-	virtual void gameStart(std::pair<int, int> roomInfo) = 0;
+	virtual void createGamePlayer(int roomId, int roomPlayerIndex, IGame* game) = 0;
+	virtual void createRoomPlayer(IRoom* room) = 0;
 
 
 };

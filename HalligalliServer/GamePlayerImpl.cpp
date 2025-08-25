@@ -1,16 +1,24 @@
 #include "GamePlayerImpl.h"
 
-bool GamePlayerImpl::playTurn()
+//void GamePlayerImpl::setGame(IGame* game)
+//{
+//    this->game = game;
+//}
+
+void GamePlayerImpl::playTurn()
 {
-    return false;
+    game->playCard(roomPlayerIndex);
+
 }
 
-void GamePlayerImpl::ringBell(int press_time_diff)
+void GamePlayerImpl::ringBell(int pressTimeDiff)
 {
+    game->pressBell(roomPlayerIndex, pressTimeDiff);
 }
 
 void GamePlayerImpl::penalty()
 {
+    game->penalty(roomPlayerIndex);
 }
 
 void GamePlayerImpl::die()
@@ -21,4 +29,19 @@ void GamePlayerImpl::die()
 bool GamePlayerImpl::isAlive()
 {
     return alive;
+}
+
+int GamePlayerImpl::getPlayerId()
+{
+    return roomPlayerIndex;
+}
+
+std::string GamePlayerImpl::getPlayerName()
+{
+    return playerManager->getPlayerName();
+}
+
+IPlayerDeck* GamePlayerImpl::getDeck()
+{
+    return playerDeck;
 }
