@@ -67,7 +67,6 @@
 | `user_joined` *(alias)* |  `room_id (int)`, `name (string)` | `{"response":"ok","action":"user_joined","player_id":7,"room_id":1}` |
 | `penalty_given` | `player_id (int)`, `reason (string)` | `target_ids (int[])`, `penalty_count (int)` | `{"response":"ok","action":"penalty_given"}` |
 
-> 네이밍 충돌 방지를 위해 README의 대문자/중복 이름을 다음처럼 권장합니다: `CREATE_ROOM → create_room`, `FIND_ROOM(page) → find_rooms`, `FIND_ROOM(id) → get_room`, `JOIN(방 입장) → join_room`, `GAME_STARTED(요청 제목) → start_game(요청) / game_started(이벤트)`, `CARD_REVEALED → card_revealed`.
 
 ---
 
@@ -87,8 +86,6 @@
 | `press_bell` | `action`, `response` | `{"response":"ok","action":"press_bell"}` |
 | `user_joined` *(alias)* | `action`, `response`, `player_id:int`, `room_id:int` | `{"response":"ok","action":"user_joined","player_id":7,"room_id":1}` |
 | `penalty_given` | `action`, `response` | `{"response":"ok","action":"penalty_given"}` |
-
-> 에러 응답은 공통 포맷만 사용합니다: `{"response":"error","action":"<요청 action>","code":"...","message":"..."}`
 
 ---
 
