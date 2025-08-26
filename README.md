@@ -42,7 +42,69 @@
 
 
 ### 요청 명세
+#### 요청/응답 공통 규칙
+- 모든 요청에는 `action: string`이 포함됩니다.
+- OK 응답은 “요청자에게만” 내려가며 형식은 `{"response":"ok","action":"<요청 action>", ...}` 입니다.
+- 에러 응답은 공통 포맷만 사용합니다(표에는 에러 코드를 넣지 않습니다).
+  - 에러 응답 포맷: `{"response":"error","action":"<요청 action>","code":"<코드>","message":"<설명>"}`
 
+---
+
+#### 요청 API (Client → Server)
+
+| action | **필수 필드 (타입)** | OK 응답 예시 |
+|---|---|---|
+| `create_room` | `room_title (string)` | `{"response":"ok","action":"create_room","room_id":1,"room_title":"방 이름1","player_id":1,"ready":false}` |
+| `find_rooms` | `page (int)` | `{"response":"ok","action":"find_rooms","page":1,"rooms":[{"room_id":1,"room_title":"방 이름1"}, ...]}` |
+| `get_room` | `room_id (int)` | `{"response":"ok","action":"get_room","room":{"room_id":1,"room_title":"방 이름1"}}` |
+| `join` | `name (string)` | `{"response":"ok","action":"join"}` |
+| `join_room` | `room_id (int)` | – | `{"response":"ok","action":"join_room"}` |
+| `exit` | `room_id (int)`, `player_id (int)` | `{"response":"ok","action":"exit","player_id":1}` |
+| `ready` | `room_id (int)`, `player_id (int)` | `{"response":"ok","action":"ready","player_id":3,"ready":true}` |
+| `start_game` | `room_id (int)` | `{"response":"ok","action":"start_game"}` |
+| `card_revealed` | `player_id (int)` | `{"response":"ok","action":"card_revealed"}` |
+| `press_bell` |`player_id (int)`, `press_time_diff (int, ms)` | `{"response":"ok","action":"press_bell"}` |
+| `user_joined` *(alias)* |  `room_id (int)`, `name (string)` | `{"response":"ok","action":"user_joined","player_id":7,"room_id":1}` |
+| `penalty_given` | `player_id (int)`, `reason (string)` | `target_ids (int[])`, `penalty_count (int)` | `{"response":"ok","action":"penalty_given"}` |
+
+> 네이밍 충돌 방지를 위해 README의 대문자/중복 이름을 다음처럼 권장합니다: `CREATE_ROOM → create_room`, `FIND_ROOM(page) → find_rooms`, `FIND_ROOM(id) → get_room`, `JOIN(방 입장) → join_room`, `GAME_STARTED(요청 제목) → start_game(요청) / game_started(이벤트)`, `CARD_REVEALED → card_revealed`.
+
+---
+
+#### 요청에 대한 OK 응답 (Server → 요청자)
+
+| 요청 action | OK 응답 payload (키: 타입) | OK 응답 예시 |
+|---|---|---|
+| `create_room` | `action:string`, `response:string`, `room_id:int`, `room_title:string`, `player_id:int`, `ready:bool` | `{"response":"ok","action":"create_room","room_id":1,"room_title":"방 이름1","player_id":1,"ready":false}` |
+| `find_rooms` | `action`, `response`, `page:int`, `rooms:[{room_id:int, room_title:string}]` | `{"response":"ok","action":"find_rooms","page":1,"rooms":[{"room_id":1,"room_title":"방 이름1"}]}` |
+| `get_room` | `action`, `response`, `room:{room_id:int, room_title:string}` | `{"response":"ok","action":"get_room","room":{"room_id":1,"room_title":"방 이름1"}}` |
+| `join` | `action`, `response` | `{"response":"ok","action":"join"}` |
+| `join_room` | `action`, `response` | `{"response":"ok","action":"join_room"}` |
+| `exit` | `action`, `response`, `player_id:int` | `{"response":"ok","action":"exit","player_id":1}` |
+| `ready` | `action`, `response`, `player_id:int`, `ready:bool` | `{"response":"ok","action":"ready","player_id":3,"ready":true}` |
+| `start_game` | `action`, `response` | `{"response":"ok","action":"start_game"}` |
+| `card_revealed` | `action`, `response` | `{"response":"ok","action":"card_revealed"}` |
+| `press_bell` | `action`, `response` | `{"response":"ok","action":"press_bell"}` |
+| `user_joined` *(alias)* | `action`, `response`, `player_id:int`, `room_id:int` | `{"response":"ok","action":"user_joined","player_id":7,"room_id":1}` |
+| `penalty_given` | `action`, `response` | `{"response":"ok","action":"penalty_given"}` |
+
+> 에러 응답은 공통 포맷만 사용합니다: `{"response":"error","action":"<요청 action>","code":"...","message":"..."}`
+
+---
+
+## 브로드캐스트 이벤트 (Server → 관련 클라이언트)
+
+| event action | payload | 예시 |
+|---|---|---|
+| `user_joined` | `player_id:int`, `name:string` | `{"action":"user_joined","player_id":7,"name":"Alice"}` |
+| `user_exited` | `player_id:int` | `{"action":"user_exited","player_id":7}` |
+| `ready_changed` | `player_id:int`, `ready:bool` | `{"action":"ready_changed","player_id":3,"ready":true}` |
+| `game_started` | `room_id:int`, `players:[{player_id:int, name:string}]` *(선택)* | `{"action":"game_started","room_id":1}` |
+| `turn_changed` | `player_id:int` | `{"action":"turn_changed","player_id":2}` |
+| `card_revealed` | `player_id:int`, `card:{num:int,type:string}`, `remaining_cards:int` | `{"action":"card_revealed","player_id":3,"card":{"num":3,"type":"banana"},"remaining_cards":11}` |
+| `penalty_given` | `player_id:int`, `reason:string`, `distribution:[{from:int,to:int,count:int}]` | `{"action":"penalty_given","player_id":3,"reason":"invalid_bell","distribution":[{"from":3,"to":2,"count":2}]}` |
+| `player_lost` | `player_id:int` | `{"action":"player_lost","player_id":2}` |
+| `game_winner` | `player_id:int` | `{"action":"game_winner","player_id":1}` |
 
 
 #### CREATE_ROOM ( 방 생성)
