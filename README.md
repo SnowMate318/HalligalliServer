@@ -15,6 +15,8 @@
 <img width="3153" height="1057" alt="할리갈리_최종 drawio" src="https://github.com/user-attachments/assets/a0519679-855c-49fc-a517-c3448547374f" />  
 
 
+---
+
 
 #### 요청 처리
 <img width="1162" height="1031" alt="요청_처리" src="https://github.com/user-attachments/assets/4de5af6c-253e-4662-9f45-24df4d71d18d" />  
@@ -25,10 +27,14 @@
     * 요청 별 구현체를 다르게 만드는 기법을 이용하여 수신부의 역할을 분할시킴  
 
 
+---
+
 
 #### 로비, 방
 <img width="1116" height="350" alt="룸_로비" src="https://github.com/user-attachments/assets/23f24452-2d08-4ac9-8cca-2b5b873de0fd" />  
 
+
+---
 
 
 #### 게임 진행
@@ -39,7 +45,7 @@
 * 객체 간 상호 호출 발생
    * 이를 해결하기 위해 요청 별로 관련있는 객체들을 이어주는 역할을 담당하는 인터페이스(Game) 추가  
 
-
+---
 
 ### 요청 명세
 #### 요청/응답 공통 규칙
